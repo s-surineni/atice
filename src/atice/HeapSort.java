@@ -11,11 +11,12 @@ package atice;
 public class HeapSort {
     
     public static void main(String[] args){
-        int A[]={4,2,6};
+        int A[]={4,2,6,8,7,9,11};
         
         HeapSort h1=new HeapSort();
         h1.Display(A);
-        h1.heapify(A, 0);
+        //h1.heapify(A, 0);
+        h1.buildHead(A);
         h1.Display(A);
     }
     void heapify(int A[],int i){
@@ -61,6 +62,13 @@ public class HeapSort {
          System.out.println(Arr[trk]+ " ");
         }
         System.out.println("End of Display");
+    }
+    
+    int[] buildHead(int A[]){
+        for(int nonL=A.length/2-1;nonL>=0;nonL-- ){
+            heapify(A, nonL);
+        }
+        return A;
     }
     
 }
