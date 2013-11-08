@@ -11,9 +11,12 @@ package atice;
 public class HeapSort {
     
     public static void main(String[] args){
-        int A[]={4,6,2};
+        int A[]={4,2,6};
+        
         HeapSort h1=new HeapSort();
+        h1.Display(A);
         h1.heapify(A, 0);
+        h1.Display(A);
     }
     void heapify(int A[],int i){
         int largest=0;
@@ -49,6 +52,15 @@ public class HeapSort {
         int temp=A[par];
         A[par]=A[chil];
         A[chil]=temp;
+    }
+    
+    void Display(int[] Arr){
+        System.out.println("Start of Display");
+        for(int trk=0;trk<Arr.length;trk++){
+         
+         System.out.println(Arr[trk]+ " ");
+        }
+        System.out.println("End of Display");
     }
     
 }
