@@ -11,33 +11,34 @@ package atice;
 public class HeapSort {
     
     public static void main(String[] args){
-        int A[]={4,2,6,8,7,9,11};
+        int A[]={4,2,6,8,7,9,1};
         
         HeapSort h1=new HeapSort();
         h1.Display(A);
         //h1.heapify(A, 0);
-        h1.buildHead(A);
+        //h1.buildHead(A);
+        h1.hpSort(A);
         h1.Display(A);
     }
-    void heapify(int A[],int i){
-        int largest=0;
+    void heapify(int A[],int i,int heapLen){
+        int largest=i;
         int lChild=leftChil(i);
         int rChild=rightChil(i);
-        if(lChild<A.length ) {
+        if(lChild<heapLen ) {
             if(A[lChild]>A[i]){
             largest=lChild;
         }
         }
-        else
-            largest=i;
-        if(rChild<A.length ){
+        else{
+            largest=i;}
+        if(rChild<heapLen ){
             if(A[rChild]>A[largest]){
             largest=rChild;
             }
         }
         if(largest!=i){
             swap(A, i, largest);
-            heapify(A, largest);
+            heapify(A, largest,heapLen);
         }
 
 }
@@ -66,9 +67,25 @@ public class HeapSort {
     
     int[] buildHead(int A[]){
         for(int nonL=A.length/2-1;nonL>=0;nonL-- ){
-            heapify(A, nonL);
+            heapify(A, nonL,A.length);
         }
         return A;
+    }
+    
+    void hpSort(int A[]){
+        buildHead(A);
+        //Display(A);
+        int heapSiz=A.length;
+        for(int i=A.length-1;i>=1;i--){
+            swap(A, 0, i);
+            //Display(A);
+            //System.out.println("after swap");
+            heapSiz--;
+            heapify(A, 0,heapSiz);
+            //Display(A);
+            //System.out.println("after heapify");
+        }
+        
     }
     
 }
