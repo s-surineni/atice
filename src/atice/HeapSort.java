@@ -12,12 +12,13 @@ public class HeapSort {
     
     public static void main(String[] args){
         int A[]={4,2,6,8,7,9,1};
+        //int A[]={3,2,1,5,6};
         
         HeapSort h1=new HeapSort();
         h1.Display(A);
-        //h1.heapify(A, 0);
+        h1.heapify(A, 0,5);
         //h1.buildHead(A);
-        h1.hpSort(A);
+        //h1.hpSort(A);
         h1.Display(A);
     }
     void heapify(int A[],int i,int heapLen){
