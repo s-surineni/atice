@@ -45,13 +45,18 @@ public class isort {
     
     void insort(int Arr[]){
         for(int out=1;out<Arr.length;out++){
+            
             int key=Arr[out];
             int i=out-1;
-            while(i>0 && Arr[i]>key){
+            while(i>=0 && Arr[i]>key){
                 Arr[i+1]=Arr[i];
                 i--;
+                Arr[i+1]=key;
             }
-            Arr[i+1]=key;
+            
+            
+            Display(Arr);
+            
         }
         System.out.println("after sorting");
         Display(Arr);
