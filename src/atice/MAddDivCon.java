@@ -15,7 +15,7 @@ public class MAddDivCon {
                {9,10,11,12},
                {13,14,15,16}};
     int[][] B=A;
-    
+    /*
     int[][] SqMatMulDC(int A[][],int B[][]){
         
         if(A.length==1){
@@ -39,5 +39,15 @@ public class MAddDivCon {
             int[][] C22=new int[(int)Math.sqrt(A.length/(4))][(int)Math.sqrt(A.length/(4))];
         }
         return C;
+    }*/
+    
+    void Td2Od(int[][] A){
+        int D1[]=new int[A.length];
+        int rci=(int)Math.sqrt(A.length);
+        for(int ri=0;ri<rci;ri++){
+            for(int ci=0;ci<rci;ci++){
+                D1[ci+ri]=A[ri][ci];
+            }
+        }
     }
 }
