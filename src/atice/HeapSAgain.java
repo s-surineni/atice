@@ -14,29 +14,50 @@ public class HeapSAgain {
     
     public static void main(String[] args){
         HeapSAgain ha=new HeapSAgain();
-        int A[]={6,7,8};
-        ha.hepify(A, 0);
+        int A[]={1,2,3,6,7,8,9,10};
+        ha.heapSort(A);
         ha.Display(A);
         
     }
     
-    void hepify(int A[],int ind){
-        int largest=0;
+    void heapSort(int A[]){
+        buildHeap(A);
+        for(int i=A.length-1,j=1;i>=1;i--,j++){
+            exch(A,i,0);
+            heapify(A, 0,A.length-j);
+        }
+    }
+    
+    void buildHeap(int A[]){
+        int heapSize=A.length;
+        for(int i=(heapSize/2)-1;i>=0;i--){
+            heapify(A, i,heapSize);
+        }
+    }
+    
+    void heapify(int A[],int ind,int hlen){
+        int largest;
         int lc=lChild(ind);
         int rc=rChild(ind);
-        int heapSize=A.length;
+        int heapSize=hlen;
         if(lc<heapSize && A[lc]>A[ind]){
             largest=lc;
         }
         else
             largest=ind;
-        if(rc<heapSize && A[rc]>A[ind]){
+        if(rc<heapSize && A[rc]>A[largest]){
             largest=rc;
         }
         if(largest != ind){
             swap(A,ind,largest);
-            hepify(A, largest);
+            heapify(A, largest,hlen);
         }
+    }
+    
+    void exch(int A[],int to,int frm){
+        A[to]=A[to]+A[frm];
+        A[frm]=A[to]-A[frm];
+        A[to]=A[to]-A[frm];
     }
     
     void swap(int A[],int to,int frm){
