@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class DataSamples
 {
-	int[] RandomArr = {1,0,2,9,3,8,4,7,5,6};
+	int[] randomArr = {1,0,2,9,3,8,4,7,5,6};
 	int[] getRandomArr(int uLimit)
 	{
 		int[] arrToRet	= new int[uLimit];
