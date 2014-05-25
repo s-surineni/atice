@@ -1,3 +1,5 @@
+package atice;
+
 /*
  * this class tells how to take input from terminal
  * using scanner class

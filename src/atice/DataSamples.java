@@ -1,3 +1,5 @@
+package atice;
+
 //samples of data for programs
 import java.util.Random;
 
