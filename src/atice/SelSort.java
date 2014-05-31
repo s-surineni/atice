@@ -1,3 +1,5 @@
+package atice;
+
 //selection sort 2.2-2 pg 29
 public class SelSort
 {

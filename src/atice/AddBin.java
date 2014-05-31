@@ -1,3 +1,5 @@
+package atice;
+
 // prob 2.1-4 pg 23
 public class AddBin
 {

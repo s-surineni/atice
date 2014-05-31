@@ -1,3 +1,5 @@
+package atice;
+
 //pg 22 cormen 2.1-3
 public class LinSearch
 {
