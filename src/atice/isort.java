@@ -43,7 +43,7 @@ public class isort {
         System.out.println("End of Display");
     }
     
-    void insort(int Arr[]){
+    int[] insort(int Arr[]){
         for(int out=1;out<Arr.length;out++){
             
             int key=Arr[out];
@@ -60,6 +60,7 @@ public class isort {
         }
         System.out.println("after sorting");
         Display(Arr);
+        return Arr;
     }
     
 }
