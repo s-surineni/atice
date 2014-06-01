@@ -30,36 +30,36 @@ class MergeSort
     
     void merge(int A[],int strt,int mid,int end)
     {
-        int fhalf = mid-strt+1;
-        int shalf = end -mid;
-        int[] rHalf = new int[shalf+1];
-        int[] lHalf = new int [fhalf+1];
+        int fhalfSz = mid-strt+1;
+        int shalfSz = end -mid;
+        int[] fHalf = new int [fhalfSz+1];
+        int[] sHalf = new int[shalfSz+1];        
         
-        for(int i = 0 ; i<fhalf;i++)
+        for(int i = 0 ; i<fhalfSz;i++)
         {
-            lHalf[i] = A[strt+i];
+            fHalf[i] = A[strt+i];
         }
         int large = -1>>>1;
-        lHalf[fhalf] = large;
+        fHalf[fhalfSz] = large;
         
-        for(int i = 0 ; i<shalf;i++)
+        for(int i = 0 ; i<shalfSz;i++)
         {
-            rHalf[i] = A[mid+i+1];
+            sHalf[i] = A[mid+i+1];
         }
-        rHalf[shalf] = large;
-        int lInd= 0;
-        int rInd= 0;
+        sHalf[shalfSz] = large;
+        int fInd= 0;
+        int sInd= 0;
         for( ;strt<=end;strt++)
         {
-            if(rHalf[rInd]<lHalf[lInd])
+            if(fHalf[fInd]<sHalf[sInd])
             {
-                A[strt] = rHalf[rInd];
-                rInd++;
+                A[strt] = fHalf[fInd];
+                fInd++;
             }
             else
             {
-                A[strt] = lHalf[lInd];
-                lInd++;
+                A[strt] = sHalf[sInd];
+                sInd++;
             }
         }
         new JavaL().display(A);
