@@ -8,10 +8,10 @@ package atice;
  *
  * @author vinnu
  */
-public class binarySearch {
+public class BinarySearch {
     public static void main(String[] args){
         int A[]={1,2,3};
-        binarySearch b1=new binarySearch();
+        BinarySearch b1=new BinarySearch();
         if(A[b1.binSrch(A, 3, 1)]==1){
             System.out.println("found" );
         }

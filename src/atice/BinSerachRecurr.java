@@ -9,12 +9,12 @@ package atice;
  *
  * @author vinnu
  */
-public class binSerachRecurr extends DataSamples{
+public class BinSerachRecurr extends DataSamples{
     
     public static void main(String[] args) {
         //new binSerachRecurr().binSrch(new isort().insort(new DataSamples().getRandomArr(10)), 0, 10, 3);
         int A[]={1,2};
-        new binSerachRecurr().binSrch(A, 0,0, 1);
+        new BinSerachRecurr().binSrch(A, 0,0, 1);
     }
     
     void binSrch(int A[],int s,int e,int v){
