@@ -14,7 +14,9 @@ class MergeSort
     public static void main(String[] args){
         MergeSort ms = new MergeSort();
         int RandomArt[] = new DataSamples().getRandomArr(10);
-        ms.mergeSort(RandomArt, 0, 9);
+        new JavaL().display(RandomArt);
+        ms.mergeSort2(RandomArt, 0, 9);
+        new JavaL().display(RandomArt);
     }
     
     void mergeSort(int A[],int strt,int end)
@@ -62,6 +64,21 @@ class MergeSort
                 sInd++;
             }
         }
-        new JavaL().display(A);
+        //new JavaL().display(A);
+    }
+    //new kind of merge sort 2-1
+    void mergeSort2(int A[],int strt,int end){
+        Isort is = new Isort();
+        if(end -strt>2)
+        {
+            int mid = (strt + end) /2;
+            mergeSort(A, strt, mid);
+            mergeSort(A, mid+1, end);
+            merge(A, strt, mid, end);
+        }
+        else{
+            is.inSort(A, strt, end);
+        }
+        
     }
 }

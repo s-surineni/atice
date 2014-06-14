@@ -36,8 +36,7 @@ public class Isort {
     }
     void Display(int[] Arr){
         System.out.println("Start of Display");
-        for(int trk=0;trk<Arr.length;trk++){
-         
+        for(int trk=0;trk<Arr.length;trk++){         
          System.out.println(Arr[trk]+ " ");
         }
         System.out.println("End of Display");
@@ -50,9 +49,9 @@ public class Isort {
             int i=out-1;
             while(i>=0 && Arr[i]>key){
                 Arr[i+1]=Arr[i];
-                i--;
-                Arr[i+1]=key;
+                i--;                
             }
+            Arr[i+1]=key;
             
             
             Display(Arr);
@@ -60,6 +59,24 @@ public class Isort {
         }
         System.out.println("after sorting");
         Display(Arr);
+        return Arr;
+    }
+    
+    int[] inSort(int Arr[],int strt,int end){
+        
+        for(int out=strt+1;out<Arr.length;out++){
+            
+            int key=Arr[out];
+            int i=out-1;
+            while(i>=strt && Arr[i]>key){
+                Arr[i+1]=Arr[i];
+                i--;
+                
+            }
+            Arr[i+1]=key;           
+            Display(Arr);
+            
+        }
         return Arr;
     }
     
