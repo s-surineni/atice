@@ -10,9 +10,9 @@ import java.util.Scanner;
  *
  * @author vinnu
  */
-public class isort {
+public class Isort {
     public static void main(String[] args) throws IOException {
-        isort is=new isort();
+        Isort is=new Isort();
         is.tInput();
         
     }
