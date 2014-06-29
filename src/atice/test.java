@@ -10,12 +10,10 @@ package atice;
  */
 public class test {
     
-    int treturn(){
-        int i=1;
-        if(i==1){
-        return 2;
-}
-        else return 1;
+public static void main(String[] args){
+    int i = 1;
+    i = i<<31;
+    System.out.println(i);
 }
     
 }
