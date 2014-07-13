@@ -15,7 +15,7 @@ public class MaxSubArray {
     
     public static void main(String[] args){
         jl = new JavaL();
-        int A[]={-1,-2,3,4};
+        int A[]={-11,-2,-3,-4};
         MaxSubArray m=new MaxSubArray();
         //m.maxCrossSubArr(A,0,A.length-1);
         int rets[]=m.maxRecSubArr(A, 1, A.length);
