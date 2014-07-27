@@ -12,44 +12,75 @@ package atice;
  */
 public class MaxPriQ {
     int heapLen;
+    int A[] = new DataSamples().getRandomArr(10);
     public static void main(String[] args)
     {
-        JavaL jl = new JavaL();
         MaxPriQ mp = new MaxPriQ();
-        int A[] = new DataSamples().getRandomArr(10);
-        //int A[] = {1,2,3,4,5};
+        mp.begin();
+        
+    }
+    
+    void begin()
+    {
+        JavaL jl = new JavaL();
         jl.display(A);
-        mp.buildMaxHeap(A);
+        buildMaxHeap();
         jl.display(A);
-        for (int i = 0; i < 10; i++) {
-            System.out.println(mp.extractMax(A));
+        for (int i = 0; i < 10; i++) 
+        {
+            System.out.println(extractMax());
+        }
+        System.out.println("inserting");
+        for (int i = 0; i < 11; i++) {
+            insert(i);
+        }
+        jl.display(A);
+        System.out.println("extracting");
+        for (int i = 0; i < 11; i++) 
+        {
+            System.out.println(extractMax());
         }
     }
     
-    int maximum(int A[])
+    int maximum()
     {
         return A[0];
     }
     
-    int extractMax(int A[])
+    void insert(int ele){
+        if(heapLen>=A.length)
+        {
+            System.out.println("Heap is full");
+        }
+        else
+        {
+            A[heapLen] = ele;
+            heapLen++;
+            maxHeapify(heapLen);
+            
+        }
+    }
+    
+    int extractMax()
     {
+        if(heapLen)
         int max = A[0];
         exchange(A, 0, heapLen-1);
         heapLen--;
-        maxHeapify(A, 1);
+        maxHeapify( 1);
         return max;
     }
     
-    private void buildMaxHeap(int A[])
+    private void buildMaxHeap()
     {
         heapLen = A.length;
         for(int i = A.length/2;i>0;i--)
         {
-            maxHeapify(A,i);
+            maxHeapify(i);
         }
     }
     
-    private void maxHeapify(int A[],int ind)
+    private void maxHeapify(int ind)
     {
         ind--;
         int lI = 2*ind+1;
@@ -66,7 +97,7 @@ public class MaxPriQ {
         if(largest != ind)
         {
             exchange(A, largest, ind);
-            maxHeapify(A, largest+1);
+            maxHeapify( largest+1);
         }
     }
     
