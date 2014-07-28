@@ -26,55 +26,63 @@ public class MaxPriQ {
         jl.display(A);
         buildMaxHeap();
         jl.display(A);
-        for (int i = 0; i < 10; i++) 
-        {
-            System.out.println(extractMax());
-        }
-        System.out.println("inserting");
-        for (int i = 0; i < 11; i++) {
-            insert(i);
-        }
-        jl.display(A);
-        System.out.println("extracting");
-        for (int i = 0; i < 11; i++) 
-        {
-            System.out.println(extractMax());
-        }
+//        for (int i = 0; i < 10; i++) 
+//        {
+//            System.out.println(extractMax());
+//        }
+//        System.out.println("inserting");
+//        for (int i = 0; i < 11; i++) {
+//            insert(i);
+//        }
+//        jl.display(A);
+//        System.out.println("extracting");
+//        for (int i = 0; i < 11; i++) 
+//        {
+//            System.out.println(extractMax());
+//        }
     }
     
     int maximum()
     {
+        System.out.println("in maximum "+A[0]);
         return A[0];
     }
     
-    void insert(int ele){
-        if(heapLen>=A.length)
-        {
-            System.out.println("Heap is full");
-        }
-        else
-        {
-            A[heapLen] = ele;
-            heapLen++;
-            maxHeapify(heapLen);
-            
-        }
-    }
+//    void insert(int ele){
+//        if(heapLen>=A.length)
+//        {
+//            System.out.println("Heap is full");
+//        }
+//        else
+//        {
+//            A[heapLen] = ele;
+//            heapLen++;
+//            maxHeapify(heapLen);
+//            
+//        }
+//    }
     
-    int extractMax()
+    void extractMax()
     {
-        if(heapLen)
-        int max = A[0];
-        exchange(A, 0, heapLen-1);
-        heapLen--;
-        maxHeapify( 1);
-        return max;
+        if(heapLen >=1)
+        {
+            int max = A[0];
+            exchange(A, 0, heapLen-1);
+            heapLen--;
+            maxHeapify( 1);
+            System.out.println(max);
+        }
+        else 
+        {
+            System.out.println("heap is empty"); 
+        }
+        
     }
     
     private void buildMaxHeap()
     {
         heapLen = A.length;
-        for(int i = A.length/2;i>0;i--)
+        for(int i = (A.length/2)-1;i>=0;i--)
         {
             maxHeapify(i);
         }
@@ -82,7 +90,6 @@ public class MaxPriQ {
     
     private void maxHeapify(int ind)
     {
-        ind--;
         int lI = 2*ind+1;
         int rI = 2*ind+2;
         int largest = ind;
@@ -97,7 +104,7 @@ public class MaxPriQ {
         if(largest != ind)
         {
             exchange(A, largest, ind);
-            maxHeapify( largest+1);
+            maxHeapify( largest);
         }
     }
     
