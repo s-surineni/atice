@@ -26,20 +26,25 @@ public class MaxPriQ {
         jl.display(A);
         buildMaxHeap();
         jl.display(A);
-//        for (int i = 0; i < 10; i++) 
-//        {
-//            System.out.println(extractMax());
-//        }
-//        System.out.println("inserting");
-//        for (int i = 0; i < 11; i++) {
-//            insert(i);
-//        }
+        System.out.println("increase key");
+//        increaseKey(5, 10);
 //        jl.display(A);
-//        System.out.println("extracting");
-//        for (int i = 0; i < 11; i++) 
-//        {
-//            System.out.println(extractMax());
-//        }
+        System.out.println("extracting");
+        for (int i = 0; i < 12; i++) 
+        {
+            extractMax();
+        }
+        System.out.println("heap len "+heapLen);
+        System.out.println("inserting");
+        for (int i = 0; i < 11; i++) {
+            insert(i);
+        }
+        jl.display(A);
+        System.out.println("extracting");
+        for (int i = 0; i < 11; i++) 
+        {
+            extractMax();
+        }
     }
     
     int maximum()
@@ -48,28 +53,49 @@ public class MaxPriQ {
         return A[0];
     }
     
-//    void insert(int ele){
-//        if(heapLen>=A.length)
-//        {
-//            System.out.println("Heap is full");
-//        }
-//        else
-//        {
-//            A[heapLen] = ele;
-//            heapLen++;
-//            maxHeapify(heapLen);
-//            
-//        }
-//    }
+    void insert(int ele){
+        //what happens if we insert at root and 
+        //use heapify
+        if(heapLen>=A.length)
+        {
+            System.out.println("Heap is full");
+        }
+        else
+        {
+            A[heapLen] = 1<< 31;
+            heapLen++;
+            increaseKey(heapLen, ele);
+            
+            
+        }
+    }
+    
+    void increaseKey(int ind,int incK)
+    {
+        ind--;
+        if(A[ind]>incK)
+        {
+            System.out.println("The new key is less than old");
+        }
+        else
+        {
+            A[ind] = incK;
+            while(ind >= 0 && A[(ind-1)/2]<A[ind])
+            {
+                exchange((ind-1)/2 , ind);
+                ind = (ind-1)/2;
+            }
+        }
+    }
     
     void extractMax()
     {
         if(heapLen >=1)
         {
             int max = A[0];
-            exchange(A, 0, heapLen-1);
+            exchange( 0, heapLen-1);
             heapLen--;
-            maxHeapify( 1);
+            maxHeapify( 0);
             System.out.println(max);
         }
         else 
@@ -103,12 +129,12 @@ public class MaxPriQ {
         }
         if(largest != ind)
         {
-            exchange(A, largest, ind);
+            exchange( largest, ind);
             maxHeapify( largest);
         }
     }
     
-    private void exchange(int A[],int to,int frm)
+    private void exchange(int to,int frm)
     {
         int tmp = A[to];
         A[to]=A[frm];
