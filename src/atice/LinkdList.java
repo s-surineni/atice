@@ -1,24 +1,27 @@
 class LinkdList<T>
 {
-    T head=null;
-    T next = null;
-    T prev = null;
+    LinkdList<T> head=null;
+    LinkdList<T> next = null;
+    LinkdList<T> prev = null;
+    T obj;
     int value;
     public static void main(String[] args)
     {
 
     }
 
-    void insert(LinkdList<T> list,LinkdList<T> ele)
+    void insert(LinkdList<T> list,T ele)
     {
-	ele.next = list.head;
+	LinkdList<T> temp = new LinkdList<T>();
+	temp.obj = ele;
+	temp.next = list.head;
 	if(list.head!=null)
 	    {
-		list.head.prev = ele;
+		list.head.prev = temp;
 	    }
-	ele.prev = null;
-	list.head = ele;
-	display();
+	temp.prev = null;
+	list.head = temp;
+	//display();
     }
 
     void display()
