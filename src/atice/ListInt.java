@@ -18,10 +18,13 @@ class ListInt
     void begin()
     {
 		listInt = new LinkdList<ListInt>();
-		ListInt tmp = new ListInt(1);
-		listInt.insert(listInt,tmp);
-		display();
 		
+		for(int i = 0 ; i<10;i++)
+		{
+			ListInt tmp = new ListInt(i);
+			listInt.insert(listInt,tmp);
+		}
+		display();	
     }
 	void display()
 	{
