@@ -1,7 +1,5 @@
 //package atice;
 
-//package atice;
-
 class ListInt
 {
     LinkdList<ListInt> listInt;
@@ -29,13 +27,18 @@ class ListInt
 			listInt.insert(listInt,tmp);
 		}
 		display();
-		LinkdList<ListInt> dele=listInt.search(listInt,0);	
+		LinkdList<ListInt> dele=search(listInt,6);
+		listInt.delete(listInt,dele);
+		display();	
     }	
-//    void search(LinkdList<ListInt> list, int key)
-//	{
-//		for(LinkdList<ListInt> temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
-//		System.out.println("found");
-//	}
+    LinkdList<ListInt> search(LinkdList<ListInt> list, int key)
+	{	LinkdList<ListInt> temp;
+		for(temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
+		if(temp!= null)
+			return temp;
+		else
+		return null;	
+	}
 	void display()
 	{
 		System.out.println("in display");
