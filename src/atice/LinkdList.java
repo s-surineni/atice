@@ -1,22 +1,15 @@
-<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package atice;
+//package atice;
 
 /**
  *
  * @author vinnu
  */
-public class LinkdList<T> {
-    
-
-package atice;
-
-
 class LinkdList<T>
 {
     LinkdList<T> head=null;
@@ -52,7 +45,7 @@ class LinkdList<T>
 //
 //    }
 
-    }
+    
 
     void search(LinkdList<ListInt> list, int key)
 	{

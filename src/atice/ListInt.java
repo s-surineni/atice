@@ -1,4 +1,4 @@
-package atice;
+//package atice;
 
 class ListInt
 {
@@ -19,7 +19,7 @@ class ListInt
 
     void begin()
     {
-		listInt = new LinkdList();
+		listInt = new LinkdList<ListInt>();
 		
 		for(int i = 0 ; i<10;i++)
 		{
