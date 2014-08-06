@@ -1,22 +1,18 @@
-<<<<<<< HEAD
+package atice;
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package atice;
+//package atice;
 
 /**
  *
  * @author vinnu
  */
-public class LinkdList<T> {
-    
-
-package atice;
-
-
 class LinkdList<T>
 {
     LinkdList<T> head=null;
@@ -31,7 +27,7 @@ class LinkdList<T>
 
     void insert(LinkdList<T> list,T ele)
     {
-	LinkdList<T> temp = new LinkdList();
+	LinkdList<T> temp = new LinkdList<T>();
 	temp.obj = ele;
 	temp.next = list.head;
 	if(list.head!=null)
@@ -52,13 +48,23 @@ class LinkdList<T>
 //
 //    }
 
-    }
-
-    void search(LinkdList<ListInt> list, int key)
+   void delete(LinkdList<T> list,LinkdList<T> o)
 	{
-            LinkdList<ListInt> temp;
+		if(o.prev!=null)
+			o.prev.next = o.next;
+		else
+			list.head = null;
+		if(o.next!=null)
+			o.next.prev = o.prev;
+	} 
+
+    LinkdList<T> search(LinkdList<T> list, int key)
+	{
+            LinkdList<T> temp;
 		for(temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
 		if(temp!=null)
-                    System.out.println("found");
+                    return temp;
+		else 
+			return null;
 	}
 }
