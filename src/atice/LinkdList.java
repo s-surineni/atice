@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,13 +13,17 @@ package atice;
  */
 public class LinkdList<T> {
     
+
+package atice;
+
+
 class LinkdList<T>
 {
     LinkdList<T> head=null;
     LinkdList<T> next = null;
     LinkdList<T> prev = null;
     T obj;
-    int value;
+//    int value;
     public static void main(String[] args)
     {
 
@@ -26,7 +31,7 @@ class LinkdList<T>
 
     void insert(LinkdList<T> list,T ele)
     {
-	LinkdList<T> temp = new LinkdList<T>();
+	LinkdList<T> temp = new LinkdList();
 	temp.obj = ele;
 	temp.next = list.head;
 	if(list.head!=null)
@@ -38,13 +43,22 @@ class LinkdList<T>
 	//display();
     }
 
-    void display()
-    {
-	for(LinkdList temp = head ;temp != null ;temp = temp.next )
-	    {
-		System.out.println("value is "+temp.value);
-	    }
+//    void display()
+//    {
+//	for(LinkdList temp = head ;temp != null ;temp = temp.next )
+//	    {
+//		System.out.println("value is "+temp.value);
+//	    }
+//
+//    }
 
     }
 
+    void search(LinkdList<ListInt> list, int key)
+	{
+            LinkdList<ListInt> temp;
+		for(temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
+		if(temp!=null)
+                    System.out.println("found");
+	}
 }
