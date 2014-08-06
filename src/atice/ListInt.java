@@ -27,13 +27,13 @@ class ListInt
 			listInt.insert(listInt,tmp);
 		}
 		display();
-		listInt.search(listInt,0);	
+		search(listInt,0);	
     }	
-//    void search(LinkdList<ListInt> list, int key)
-//	{
-//		for(LinkdList<ListInt> temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
-//		System.out.println("found");
-//	}
+    void search(LinkdList<ListInt> list, int key)
+	{
+		for(LinkdList<ListInt> temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
+		System.out.println("found");
+	}
 	void display()
 	{
 		System.out.println("in display");

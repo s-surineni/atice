@@ -47,11 +47,11 @@ class LinkdList<T>
 
     
 
-    void search(LinkdList<ListInt> list, int key)
-	{
-            LinkdList<ListInt> temp;
-		for(temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
-		if(temp!=null)
-                    System.out.println("found");
-	}
+//    void search(LinkdList<T> list, int key)
+//	{
+//            LinkdList<T> temp;
+//		for(temp = list.head; temp!= null && temp.obj.value!=key; temp = temp.next);
+//		if(temp!=null)
+//                    System.out.println("found");
+//	}
 }
