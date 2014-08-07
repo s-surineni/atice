@@ -4,6 +4,8 @@ class BinSearchTree
 	BinSearchTree bst2;
 	IntNode root = null;
 	Scanner sc= new Scanner(System.in);
+	Scanner isc = new Scanner(System.in);
+	int key;
 
 	public static void main(String[] args)
 	{
@@ -20,20 +22,26 @@ class BinSearchTree
 			switch (uIn)
 			{
 				case 'i':
-					takeInp();
+				System.out.println("Enter the value you want to insert");
+				key = isc.nextInt();
+				insert(bst2,new IntNode(key));
+					break;
+				case 's':
+					System.out.println("Enter value to search for");
+					key = isc.nextInt();
+					IntNode serch=search(root,key);
+					if(serch != null)
+						System.out.println("found");
+					else
+						System.out.println("not found");
+					break;
 			}
 			System.out.println("Insert i");
+			System.out.println("search s");
 			System.out.println("Exit x");
 			
 
 		}while((uIn = sc.next().charAt(0))!= 'x');
-	}
-	void takeInp()
-	{
-		System.out.println("Enter the value you want to insert");
-		Scanner isc = new Scanner(System.in);
-		int val = isc.nextInt();
-		insert(bst2,new IntNode(val));
 	}
 	void insert(BinSearchTree tree,IntNode n)
 	{
@@ -79,5 +87,37 @@ class BinSearchTree
 			inTreeWalk(temp.rChild);
 		}
 	}
+
+	IntNode search(Node tmpRt,int ky)
+	{
+		if(tmpRt == null || ((IntNode)tmpRt).key == ky )
+		{
+			return (IntNode)tmpRt;
+		}
+		if(((IntNode)tmpRt).key <= ky)
+		{
+			return search(tmpRt.rChild,ky);
+		}
+		else
+			return search(tmpRt.lChild,ky);
+	}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
