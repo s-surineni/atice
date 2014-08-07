@@ -1,9 +1,9 @@
 class IntNode extends Node
 {
 	int key;
-	IntNode(Node p,Node l,Node r,int k)
+	IntNode(int k)
 	{
-		super(p,l,r);
+		super();
 		key = k;
 	}
 }

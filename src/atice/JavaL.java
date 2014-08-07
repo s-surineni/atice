@@ -44,6 +44,8 @@ public class JavaL {
         }
         System.out.println("End of Display");
     }
+
+	
     
     //linke for char reader
     BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
