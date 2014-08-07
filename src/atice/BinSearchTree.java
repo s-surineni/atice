@@ -35,11 +35,38 @@ class BinSearchTree
 					else
 						System.out.println("not found");
 					break;
+				case 'm':
+					IntNode min = minm(root);
+					if(min != null)
+						System.out.println("minimum is "+min.key);
+					else
+						System.out.println("the tree has no leaves");
+					break;
+				case 'M':	
+					IntNode max = maxm(root);
+					if(max != null)
+						System.out.println("maximum is "+max.key);
+					else
+						System.out.println("the tree has no leaves");
+					break;	
+				case 'u':	
+					System.out.println("Enter key of ele of which you want to find the successor of");
+					key = isc.nextInt();
+					IntNode nod = search(root,key);
+					IntNode scr = success(nod);
+					if(scr != null)
+						System.out.println("successor is "+scr.key);
+					else
+						System.out.println("this is the largest element");
+					break;	
 			}
 			System.out.println("Insert i");
 			System.out.println("search s");
+			System.out.println("minimum m");
+			System.out.println("maximum M");
+			System.out.println("successor u");
 			System.out.println("Exit x");
-			
+				
 
 		}while((uIn = sc.next().charAt(0))!= 'x');
 	}
@@ -102,10 +129,32 @@ class BinSearchTree
 			return search(tmpRt.lChild,ky);
 	}	
 
+	IntNode minm(Node tmpRt)
+	{
+		while(((IntNode)tmpRt).lChild != null)
+			tmpRt = tmpRt.lChild;
+		return (IntNode)tmpRt;
+	}
 
-
-
-
+	IntNode maxm(Node tmpRt)
+	{
+		while(((IntNode)tmpRt).rChild != null)
+			tmpRt = tmpRt.rChild;
+		return (IntNode)tmpRt;
+	}
+	
+	IntNode success(Node sR)
+	{
+		if(sR.rChild != null)
+			return minm(sR.rChild);
+		Node y = sR.parent;
+		while(y != null && sR == y.rChild)
+		{
+			sR = y;
+			y = sR.parent;
+		}
+		return (IntNode)y;
+	}
 
 
 
