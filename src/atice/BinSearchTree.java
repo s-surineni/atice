@@ -59,12 +59,23 @@ class BinSearchTree
 					else
 						System.out.println("this is the largest element");
 					break;	
+				case 'p':	
+					System.out.println("Enter key of ele of which you want to find the predecessor of");
+					key = isc.nextInt();
+					nod = search(root,key);
+					scr = success(nod);
+					if(scr != null)
+						System.out.println("predecessor is "+scr.key);
+					else
+						System.out.println("this is the smallest element");
+					break;	
 			}
 			System.out.println("Insert i");
 			System.out.println("search s");
 			System.out.println("minimum m");
 			System.out.println("maximum M");
 			System.out.println("successor u");
+			System.out.println("predecessor p");
 			System.out.println("Exit x");
 				
 
@@ -145,6 +156,19 @@ class BinSearchTree
 	
 	IntNode success(Node sR)
 	{
+		if(sR.lChild != null)
+			return maxm(sR.lChild);
+		Node y = sR.parent;
+		while(y != null && sR == y.lChild)
+		{
+			sR = y;
+			y = sR.parent;
+		}
+		return (IntNode)y;
+	}
+
+	IntNode predec(Node sR)
+	{
 		if(sR.rChild != null)
 			return minm(sR.rChild);
 		Node y = sR.parent;
@@ -155,8 +179,6 @@ class BinSearchTree
 		}
 		return (IntNode)y;
 	}
-
-
 
 
 
