@@ -179,7 +179,26 @@ class BinSearchTree
 		}
 		return (IntNode)y;
 	}
+	
+	void transplant(Node to,Node frm)
+	{
+		if(to.parent == null)
+			bst2.root = frm;
+		else
+		{
+			if(to.parent.lChild == to)
+			{
+				to.parent.lChild = frm;
+			}
 
+			else
+				to.parent.rChild = frm;
+		}
+		if(frm != null)
+		{
+			frm.parent = to.parent;
+		}
+	}
 
 
 
