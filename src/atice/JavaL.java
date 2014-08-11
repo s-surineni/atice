@@ -44,6 +44,20 @@ public class JavaL {
         }
         System.out.println("End of Display");
     }
+    
+    void display(int[][] Arr) {
+        System.out.println("Start of Display");
+        int rc = Arr.length;
+        int cc = Arr[0].length;
+        for (int trk1 = 0; trk1 < rc; trk1++) {
+            for (int trk = 0; trk < cc; trk++) {
+
+                System.out.println(Arr[rc][cc] + " ");
+            }
+        }
+        System.out.println("End of Display");
+    }
+    
 
 	
     
