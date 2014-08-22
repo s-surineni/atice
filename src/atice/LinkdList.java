@@ -15,7 +15,7 @@ class LinkdList<T>
     {
 
     }
-
+     
     void insert(LinkdList<T> list,T ele)
     {
 	LinkdList<T> temp = new LinkdList<T>();
