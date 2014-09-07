@@ -1,4 +1,4 @@
-//package atice;
+package atice;
 
 /*
  * this class tells how to take input from terminal
