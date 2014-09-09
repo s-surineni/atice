@@ -16,17 +16,17 @@ class LinkdList<T>
 
     }
      
-    void insert(LinkdList<T> list,T ele)
+    void insert(T ele)
     {
 	LinkdList<T> temp = new LinkdList<T>();
 	temp.obj = ele;
-	temp.next = list.head;
-	if(list.head!=null)
+	temp.next = head;
+	if(head!=null)
 	    {
-		list.head.prev = temp;
+		head.prev = temp;
 	    }
 	temp.prev = null;
-	list.head = temp;
+	head = temp;
 	//display();
     }
 

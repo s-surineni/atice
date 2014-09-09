@@ -40,13 +40,25 @@ public class GraphAL {
      {
 	  for(int i = 0;i<ver;i++)
 	  {
-	      for(int j = sc.nextInt();j>0;j--)
+	      arrL[i] = new ArrayList();
+	      int adj = sc.nextInt();
+	      int nextVer;
+	      for(int j = adj;j>0;j--)
 		    {
-		    	 arrL[i] = new ArrayList();
-			 arrL[i].li.insert(arrL[i].li,sc.nextInt()); 
+			nextVer = sc.nextInt();
+			System.out.println(nextVer);
+			arrL[i].li.insert(new Vertex(nextVer)); 
 		    }
-	  
 	       
 	  }
-     }
+	  System.out.println("in graph");
+	  for(int i=0;i<ver;i++)
+	      {
+		  System.out.println("next");
+		  for(LinkdList<Vertex> lint=arrL[i].li.head ; lint!=null;lint = lint.next)
+		      {
+			  System.out.println(lint.obj.id);
+		      }
+	      } 
+    }
 }
