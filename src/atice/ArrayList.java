@@ -1,6 +1,6 @@
 class ArrayList
 {
     int vertex;
-    static  LinkdList<Vertex> li= new LinkdList<Vertex>();
+     LinkdList<Vertex> li= new LinkdList<Vertex>();
     
 }

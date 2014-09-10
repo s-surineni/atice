@@ -6,20 +6,17 @@
  */
 class LinkdList<T>
 {
-    LinkdList<T> head=null;
-    LinkdList<T> next = null;
-    LinkdList<T> prev = null;
-    T obj;
+    LinkdNode<T> head;
 //    int value;
     public static void main(String[] args)
     {
 
     }
      
-    void insert(T ele)
+    void insert(T el)
     {
-	LinkdList<T> temp = new LinkdList<T>();
-	temp.obj = ele;
+	LinkdNode<T> temp = new LinkdNode<T>();
+	temp.ele = el;
 	temp.next = head;
 	if(head!=null)
 	    {
@@ -39,7 +36,7 @@ class LinkdList<T>
 //
 //    }
 
-   void delete(LinkdList<T> list,LinkdList<T> o)
+   void delete(LinkdList<T> list,LinkdNode<T> o)
 	{
 		if(o.prev!=null)
 			o.prev.next = o.next;
