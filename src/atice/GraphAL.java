@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 public class GraphAL {
-     private ArrayList[] arrL;
+     ArrayList[] arrL;
      private int ver;   
      private Scanner sc;
     //     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

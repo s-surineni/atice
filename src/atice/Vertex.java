@@ -13,8 +13,8 @@ class Vertex
     {
 	id = idf;
     }
-    public static void main(String[] args)
+    Vertex()
     {
-
     }
+
 }
