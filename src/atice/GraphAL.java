@@ -26,7 +26,7 @@ public class GraphAL {
 	  System.out.println("Enter the number of vertices in graph");
 	  try
 	  {
-	       sc = new Scanner(new File("wgraph"));
+	       sc = new Scanner(new File("wgraph1"));
 	  }
 	  catch(FileNotFoundException e)
 	  {
@@ -52,13 +52,13 @@ public class GraphAL {
 	       }
 
 	  }
-	  System.out.println("in graph");
+	  //System.out.println("in graph");
 	  for(int i=0;i<ver;i++)
 	  {
-	       System.out.println("next");
+	    //   System.out.println("next");
 	       for(LinkdNode<Vertex> lint=arrL[i].li.head ; lint!=null;lint = lint.next)
 	       {
-		    System.out.println(lint.ele.id);
+	//	    System.out.println(lint.ele.id);
 		    //System.out.println(lint.ele.p.id);
 	       }
 	  } 
@@ -88,16 +88,16 @@ public class GraphAL {
 	       }
 
 	  }
-	  System.out.println("in graph");
+	  //System.out.println("in graph");
 	  for(int i=0;i<ver;i++)
 	  {
-	       System.out.println("next vertex "+(i+1));
+	 //      System.out.println("next vertex "+(i+1));
 	       for(LinkdNode<Vertex> lint=arrL[i].li.head ; lint!=null;lint = lint.next)
 	       {
-		    System.out.print("id "+(lint.ele.id+1));
-		    System.out.println(" wei "+lint.ele.d);
+	//	    System.out.print("id "+(lint.ele.id+1));
+	//	    System.out.println(" wei "+lint.ele.d);
 
-		    //System.out.println(lint.ele.p.id);
+		   // System.out.println(lint.ele.p.id);
 	       }
 	  }
        return arrL;

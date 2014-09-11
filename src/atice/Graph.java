@@ -35,31 +35,35 @@ class Graph
 		int lc = 2*i+1;
 		int rc = 2*i+2;
 		int min=i;
-		if(rc+1<=len && ver[rc].d<ver[i].d)
+		if(rc<len && ver[rc].d<ver[i].d)
 		{
 			min=rc;
 		}
-		if(lc+1<= len && ver[lc].d<ver[min].d)
+		if(lc< len && ver[lc].d<ver[min].d)
 		{
 			min = lc;
 		}
 		if(min!=i)
 		{
-			int temp = ver[min].d;
-			int tempid = ver[min].id;
-			ver[min].d=ver[i].d;
-			ver[min].id=ver[i].id;
-			ver[i].d=temp;
-			ver[i].id=tempid;
+			Vertex temp = ver[min];
+			ver[min]=ver[i];
+			ver[i]=temp;
 			heapify(ver,min,len);
 		}
 	}
 
 	void relax(Vertex[] ver,int to,int par,int dist,int dist2)
 	{
-	       if(ver[to].d>dist+dist2)
+	     System.out.println("from "+(par+1));
+	     System.out.println("to "+(to+1));
+	    int totaldist = dist+dist2; 
+//	     System.out.println("dist "+totaldist);
+	     System.out.println("pre dist "+ver[to].d);
+	       if(ver[to].d>totaldist)
 	       {
-		    ver[to].d = dist+dist2;
+		    ver[to].d = totaldist;
+	     System.out.println("now dist "+ver[to].d);
+		    
 		    ver[to].p = par;
 	       }
 	}
