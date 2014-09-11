@@ -10,17 +10,15 @@ class Graph
 	{
 
 	}
-	Vertex[] initSingSource(Vertex v[],int src)
+	void initSingSource(Vertex v[],int src)
 	{
 		src--;
 		int len = v.length;
 		for(int itr = 0; itr<len;itr++)
 		{
-			v[itr] = new Vertex();
-			v[itr].d=-((1<<31)+1);
+			v[itr] = new Vertex(itr,0,-((1<<31)+1));
 		}
 		v[src].d=0;
-		return v;
 	}
 
 	void makeHeap(Vertex[] ver,int len)
@@ -55,5 +53,14 @@ class Graph
 			ver[i].id=tempid;
 			heapify(ver,min,len);
 		}
+	}
+
+	void relax(Vertex[] ver,int to,int par,int dist,int dist2)
+	{
+	       if(ver[to].d>dist+dist2)
+	       {
+		    ver[to].d = dist+dist2;
+		    ver[to].p = par;
+	       }
 	}
 }
