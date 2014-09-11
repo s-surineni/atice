@@ -23,7 +23,7 @@ class Dijkstra
           g.initSingSource(ver,src);
           System.out.println("after ininting");
 	  display(ver);
-	  g.makeHeap(ver,glen);
+	  g.makeHeap(ver,locs,glen);
           for(int i = 0;i<glen;i++)
           {
 	       //ver = g.
@@ -33,7 +33,7 @@ class Dijkstra
 	       display(ver);
 	       for(LinkdNode<Vertex> tmp = al[u].li.head;tmp!=null;tmp = tmp.next)
 	       {    
-		    g.relax(ver,tmp.ele.id,u,dist,tmp.ele.d);
+		    g.relax(ver,locs[tmp.ele.id],u,dist,tmp.ele.d);
 	       }
 	       System.out.println("after relaxing");
 	       display(ver);
@@ -41,7 +41,7 @@ class Dijkstra
 	       Vertex tmp = ver[0];
 	       ver[0]=ver[hlen];
 	       ver[hlen]=tmp;
-	       g.makeHeap(ver,hlen);
+	       g.makeHeap(ver,locs,hlen);
 	       System.out.println("after heapify");
 	       display(ver);
           }

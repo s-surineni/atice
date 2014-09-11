@@ -21,16 +21,16 @@ class Graph
 		v[src].d=0;
 	}
 
-	void makeHeap(Vertex[] ver,int len)
+	void makeHeap(Vertex[] ver,int[] locs,int len)
 	{
 		int nonLeaf = (len/2)-1;
 		for(int i = nonLeaf;i>=0;i--)
 		{
-			heapify(ver,i,len);
+			heapify(ver,locs,i,len);
 		}
 	}
 
-	void heapify(Vertex[] ver,int i,int len)
+	void heapify(Vertex[] ver,int[] locs,int i,int len)
 	{
 		int lc = 2*i+1;
 		int rc = 2*i+2;
@@ -48,7 +48,10 @@ class Graph
 			Vertex temp = ver[min];
 			ver[min]=ver[i];
 			ver[i]=temp;
-			heapify(ver,min,len);
+			int t = min;
+			locs[min]=locs[i];
+			locs[i]=t;
+			heapify(ver,locs,min,len);
 		}
 	}
 
