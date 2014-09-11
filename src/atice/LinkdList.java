@@ -7,6 +7,7 @@
 class LinkdList<T>
 {
     LinkdNode<T> head;
+    LinkdNode<T> tail;
 //    int value;
     public static void main(String[] args)
     {
@@ -17,13 +18,17 @@ class LinkdList<T>
     {
 	LinkdNode<T> temp = new LinkdNode<T>();
 	temp.ele = el;
-	temp.next = head;
-	if(head!=null)
-	    {
-		head.prev = temp;
-	    }
-	temp.prev = null;
-	head = temp;
+	temp.next = null;
+	if(head==null)
+	{
+	     head = tail =  temp;
+	}
+	else
+	{
+	     temp.prev = tail;
+	     tail.next=temp;
+	     tail = tail.next;
+	}
 	//display();
     }
 
