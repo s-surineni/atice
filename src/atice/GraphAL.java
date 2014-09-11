@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 public class GraphAL {
-     ArrayList[] arrL;
+     private ArrayList[] arrL;
      private int ver;   
      private Scanner sc;
      //     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -63,9 +63,16 @@ public class GraphAL {
 	       }
 	  } 
      }
-     void popWeighGraph ()
+     ArrayList[] popWeighGraph ()
      {
-	  ver = sc.nextInt();
+	  try
+	  {
+	       sc = new Scanner(new File("wgraph"));
+	  }
+	  catch(FileNotFoundException e)
+	  {
+       }
+       ver = sc.nextInt();
 	  arrL = new ArrayList[ver];
 	  for(int i = 0;i<ver;i++)
 	  {
@@ -92,6 +99,7 @@ public class GraphAL {
 
 		    //System.out.println(lint.ele.p.id);
 	       }
-	  } 
+	  }
+       return arrL;
      }
 }
