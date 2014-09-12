@@ -45,13 +45,20 @@ class Graph
 		}
 		if(min!=i)
 		{
+          //     System.out.println("in heap");
+            //   new Dijkstra().display(ver);
+              // new JavaL().display(locs);
 			Vertex temp = ver[min];
-			ver[min]=ver[i];
-			ver[i]=temp;
-			int t = min;
-			locs[min]=locs[i];
-			locs[i]=t;
-			heapify(ver,locs,min,len);
+               int tloc = locs[ver[min].id];
+               int floc = locs[ver[i].id];
+               //System.out.println(" min i tloc floc "+min+" "+i+" "+tloc+" "+floc);
+               ver[min]=ver[i];
+               ver[i]=temp;
+               locs[tloc]=i;
+               locs[floc]=min;
+               
+               //new Dijkstra().display(ver);
+heapify(ver,locs,min,len);
 		}
 	}
 
@@ -60,8 +67,8 @@ class Graph
 	     System.out.println("from "+(par+1));
 	     System.out.println("to "+(to+1));
 	    int totaldist = dist+dist2; 
-//	     System.out.println("dist "+totaldist);
-	     System.out.println("pre dist "+ver[to].d);
+	     System.out.println("dist "+totaldist);
+System.out.println("pre dist "+ver[to].d);
 	       if(ver[to].d>totaldist)
 	       {
 		    ver[to].d = totaldist;

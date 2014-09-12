@@ -37,12 +37,10 @@ public class JavaL {
     
     //this is the method for displaying array
     void display(int[] Arr) {
-        System.out.println("Start of Display");
         for (int trk = 0; trk < Arr.length; trk++) {
 
             System.out.println(Arr[trk] + " ");
         }
-        System.out.println("End of Display");
     }
     
     void display(int[][] Arr) {
