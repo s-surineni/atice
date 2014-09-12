@@ -26,7 +26,7 @@ public class GraphAL {
 	  System.out.println("Enter the number of vertices in graph");
 	  try
 	  {
-	       sc = new Scanner(new File("wgraph1"));
+	       sc = new Scanner(new File("wgraph"));
 	  }
 	  catch(FileNotFoundException e)
 	  {

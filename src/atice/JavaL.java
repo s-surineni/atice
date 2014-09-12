@@ -39,7 +39,7 @@ public class JavaL {
     void display(int[] Arr) {
         for (int trk = 0; trk < Arr.length; trk++) {
 
-            System.out.println(Arr[trk] + " ");
+            System.out.println(Arr[trk]+1 + " ");
         }
     }
     

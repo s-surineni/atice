@@ -25,8 +25,11 @@ class Dijkstra
           System.out.println("enter the source you wanted");
           int src = sc.nextInt();
           g.initSingSource(ver,src);
-          System.out.println("after ininting");
-          display(ver);
+          //System.out.println("after ininting");
+          //System.out.println("vertices");
+          //display(ver);
+          //System.out.println("locs");
+	  //display(locs);
           g.makeHeap(ver,locs,glen);
           for(int i = 0;i<glen;i++)
           {
@@ -52,6 +55,11 @@ class Dijkstra
                locs[floc]=0;
                ver[0]=ver[hlen];
                ver[hlen]=tmp;
+	       System.out.println("after deleting");
+	       System.out.println("vertices");
+	       display(ver);
+	       System.out.println("locs");
+	       display(locs);
                g.makeHeap(ver,locs,hlen);
 	       System.out.println("after heapify");
 	       display(ver);
@@ -61,8 +69,15 @@ class Dijkstra
 
      void display(Vertex[] Arr) {
 	  for (int trk = 0; trk < Arr.length; trk++) {
-
-	       System.out.println(Arr[trk].id+1 + " "+Arr[trk].d);
+	       System.out.println((Arr[trk].id+1) + " "+Arr[trk].d);
 	  }
      }
+
+     void display(int[] Arr) {
+	  for (int trk = 0; trk < Arr.length; trk++) {
+
+	       System.out.println((trk+1) +" "+(Arr[trk]+1 )+ " ");
+	  }
+     }
+
 }
