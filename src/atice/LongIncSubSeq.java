@@ -19,25 +19,41 @@ class LongIncSubSeq
           {
                seq[i]=sc.nextInt();
           }
-          System.out.println("after input");
-          jl.display(seq);
           int len[]=new int[seqlen];
+          int prev[]=new int[seqlen];
+
+          int maxestInd = 0;
           for(int i = 0;i<seqlen;i++)
           {
+               prev[i]= -1;
                int max = 0;
-               for(int j = i-1;j>=0;j--)
+               for(int j = 0;j<i;j++)
                {
                     if(seq[i]>seq[j])
                     {
-                         max =len[j];
-                         break; 
+                         if(max<len[j])
+                         {
+                              max=len[j];
+                              prev[i]=j;
+                         }
+                         
                     }
                }
                len[i]=++max;
-               System.out.println("each it "+len[i]);
-
-
+               if(len[maxestInd]<len[i])
+                    maxestInd = i;
           }
-          System.out.println("len is " + len[seqlen-1]);
+          jl.display(prev);
+          System.out.println("maxest "+maxestInd);
+          System.out.println("len is " + len[maxestInd]);
+          System.out.println("sequence");
+          int lent = len[maxestInd];
+          for(int i = 0;i<lent;i++)
+          {
+               
+               System.out.print(seq[maxestInd]);
+               maxestInd = prev[maxestInd];
+          }
+          
      }
 }
