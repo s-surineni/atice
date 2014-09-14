@@ -1,3 +1,5 @@
+package atice;
+
 //package atice;
 
 /*
@@ -36,7 +38,7 @@ public class JavaL {
     }
     
     //this is the method for displaying array
-    void display(int[] Arr) {
+    public void display(int[] Arr) {
         for (int trk = 0; trk < Arr.length; trk++) {
 
             System.out.println(Arr[trk] + " ");

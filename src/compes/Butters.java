@@ -3,10 +3,13 @@ package compes;
 //http://www.hackerearth.com/problem/algorithm/criminals-little-deepu-and-little-kuldeep-1/
 
 import java.util.Scanner;
+import atice.JavaL;
 
 
 public class Butters {
     Scanner sc ;
+    JavaL jl = new JavaL();
+    
     public static void main(String[] a)
     {
         Butters b = new Butters();
@@ -26,6 +29,7 @@ public class Butters {
                 high[j] = sc.nextInt();
             }
             quickSort(high, 0, boxes-1);
+            jl.display(high);
             boxes = condense(high,boxes);
             System.out.println(boxes);
         }
@@ -33,26 +37,25 @@ public class Butters {
     
     int condense(int[] high,int boxes)
     {
-        boolean change = false;
         for (int i = 0; i < high.length-1; i++) 
         {
             if(high[i]<high[i+1])
             {
-                change = true;
                 high[i]=-1;
                 boxes--;
             }
         }
-        if(change)
+                
+        if(boxes!= high.length)
         {
-            high[high.length-1]=-1;
-            newHigh(high,boxes-1);
+            boxes = newHigh(high,boxes);   
+            return boxes;
+            
         }
-        
         return boxes;
     }
     
-    void newHigh(int[] high,int siz)
+    int newHigh(int[] high,int siz)
     {
         int[] nH = new int[siz];
         for (int i = 0,j=0; i < high.length; i++) {
@@ -62,7 +65,8 @@ public class Butters {
                 j++;
             }
         }
-        condense(nH, siz+1);
+        siz = condense(nH, siz);
+        return siz;
     }
     void quickSort(int[] nos,int st,int end)
      {
