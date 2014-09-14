@@ -29,7 +29,8 @@ public class Butters {
                 high[j] = sc.nextInt();
             }
             quickSort(high, 0, boxes-1);
-            jl.display(high);
+            //System.out.println("after quick");
+            //jl.display(high);
             boxes = condense(high,boxes);
             System.out.println(boxes);
         }
@@ -37,18 +38,25 @@ public class Butters {
     
     int condense(int[] high,int boxes)
     {
+        boolean change = false;
         for (int i = 0; i < high.length-1; i++) 
         {
+            
             if(high[i]<high[i+1])
             {
+                change = true;
                 high[i]=-1;
                 boxes--;
             }
         }
                 
-        if(boxes!= high.length)
+        if(change && boxes!= (high.length+1))
         {
-            boxes = newHigh(high,boxes);   
+            high[high.length-1]=-1;
+            //System.out.println("after condense");
+            //jl.display(high);
+            //System.out.println("boxes "+boxes);
+            boxes = newHigh(high,boxes-1);   
             return boxes;
             
         }
@@ -57,15 +65,20 @@ public class Butters {
     
     int newHigh(int[] high,int siz)
     {
+        if(siz==0)
+            return siz+1;
         int[] nH = new int[siz];
-        for (int i = 0,j=0; i < high.length; i++) {
+        for (int i = 0,j=0; i < high.length-1; i++) {
             if(high[i]!=-1)
             {
                 nH[j]=high[i];
                 j++;
             }
         }
-        siz = condense(nH, siz);
+        //System.out.println("after nh");
+        //jl.display(nH);
+        //System.out.println("boxes "+siz);
+        siz = condense(nH, siz+1);
         return siz;
     }
     void quickSort(int[] nos,int st,int end)
