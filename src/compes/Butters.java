@@ -3,10 +3,14 @@ package compes;
 //http://www.hackerearth.com/problem/algorithm/criminals-little-deepu-and-little-kuldeep-1/
 
 import java.util.Scanner;
+import atice.JavaL;
 
 
 public class Butters {
     Scanner sc ;
+    JavaL jl = new JavaL();
+    int boxes;
+    int turn;
     public static void main(String[] a)
     {
         Butters b = new Butters();
@@ -19,23 +23,27 @@ public class Butters {
         int tc = sc.nextInt();
         for (int i = 0; i < tc; i++) 
         {
-            int boxes = sc.nextInt();
+            boxes = sc.nextInt();
+            turn = 0;
             int[] high = new int[boxes];
             for (int j = 0; j < boxes; j++) 
             {
                 high[j] = sc.nextInt();
             }
             quickSort(high, 0, boxes-1);
-            boxes = condense(high,boxes);
-            System.out.println(boxes);
+            ////System.out.println("after quick");
+            //jl.display(high);
+            condense(high);
+            //System.out.println(boxes);
         }
     }
     
-    int condense(int[] high,int boxes)
+    void condense(int[] high)
     {
         boolean change = false;
         for (int i = 0; i < high.length-1; i++) 
         {
+            
             if(high[i]<high[i+1])
             {
                 change = true;
@@ -43,26 +51,43 @@ public class Butters {
                 boxes--;
             }
         }
-        if(change)
+                
+        if(change )
         {
+            //System.out.println("turn here "+turn);
             high[high.length-1]=-1;
-            newHigh(high,boxes-1);
+            //System.out.println("after condense");
+            //jl.display(high);
+            //System.out.println("boxes "+boxes);
+            turn++;
+            newHigh(high,boxes-turn);
+            
+        }
+        if(!change)
+        {
+            System.out.println(boxes);
         }
         
-        return boxes;
+        
     }
     
     void newHigh(int[] high,int siz)
     {
+//        if(siz==0)
+//            System.out.println(boxes);
         int[] nH = new int[siz];
-        for (int i = 0,j=0; i < high.length; i++) {
+        for (int i = 0,j=0; i < high.length-1; i++) {
             if(high[i]!=-1)
             {
                 nH[j]=high[i];
                 j++;
             }
         }
-        condense(nH, siz+1);
+        //System.out.println("after nh");
+        //jl.display(nH);
+        //System.out.println("boxes "+(siz+1));
+        condense(nH);
+        
     }
     void quickSort(int[] nos,int st,int end)
      {
