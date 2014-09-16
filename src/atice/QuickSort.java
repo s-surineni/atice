@@ -3,7 +3,7 @@ package atice;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-class QuickSort
+public class QuickSort
 {
      public static void main(String[] a)
      {
@@ -38,7 +38,7 @@ class QuickSort
 	  display(nos);
      }
 
-     void quickSort(int[] nos,int st,int end)
+     int[] quickSort(int[] nos,int st,int end)
      {
          if(st<end)
 	  {
@@ -46,6 +46,18 @@ class QuickSort
 	       quickSort(nos,st,indOfP-1);
 	       quickSort(nos,indOfP+1,end);
 	  }
+	  return nos;
+     }
+
+     public char[] quickSort(char[] nos,int st,int end)
+     {
+         if(st<end)
+	  {
+	       int indOfP = partition(nos,st,end);
+	       quickSort(nos,st,indOfP-1);
+	       quickSort(nos,indOfP+1,end);
+	  }
+	  return nos;
      }
 
      int partition(int[] nos,int st,int end)
@@ -57,6 +69,22 @@ class QuickSort
 	       {
 		    pivInd++;
 		    int tmp = nos[pivInd];
+		    nos[pivInd] = nos[i];
+		    nos[i]=tmp;
+	       }
+	  }
+	  return pivInd;
+     }
+     
+     int partition(char[] nos,int st,int end)
+     {
+	  int pivInd = st-1;
+	  for(int i = st;i<= end;i++)
+	  {
+	       if(nos[i]<=nos[end])
+	       {
+		    pivInd++;
+		    char tmp = nos[pivInd];
 		    nos[pivInd] = nos[i];
 		    nos[i]=tmp;
 	       }

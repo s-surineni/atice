@@ -1,4 +1,4 @@
-//package atice;
+package atice;
 
 /*
  * this class tells how to take input from terminal
@@ -32,16 +32,23 @@ public class JavaL {
             Ar[i]=s1.nextInt();
             
         }
-        display(Ar);
+        //display(Ar);
     }
     
      //this is the method for displaying array
-     void display(int[] Arr) {
+     void display(char[] Arr) {
 	  for (int trk = 0; trk < Arr.length; trk++) {
 
 	       System.out.println(Arr[trk] + " ");
 	  }
      }
+     
+     //void display(int[] Arr) {
+//	  for (int trk = 0; trk < Arr.length; trk++) {
+//
+//	       System.out.println(Arr[trk] + " ");
+//	  }
+  //   }
 
      void display(int[][] Arr) {
 	  System.out.println("Start of Display");
