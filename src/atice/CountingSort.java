@@ -1,3 +1,5 @@
+package atice;
+
 import java.util.Scanner;
 
 class CountingSort

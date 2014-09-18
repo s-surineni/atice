@@ -1,11 +1,7 @@
 //https://www.hackerrank.com/challenges/gem-stones
-package compes;
-import atice.JavaL;
-import atice.QuickSort;
 import java.util.Scanner;
 class GemStones
 {
-     JavaL jl = new JavaL();
      public static void main(String[] a)
      {
 	  GemStones gs = new GemStones();
@@ -15,31 +11,25 @@ class GemStones
      void begin()
      {
 	  Scanner sc = new Scanner(System.in);
-	  QuickSort qs = new QuickSort();
 	  int stones = sc.nextInt();
 	  int gems = stones;
 	  char[] stone = sc.next().toCharArray();
-	  int[] ele = new int[9];
+	  int[] ele = new int[26];
 	  for(int i = 0;i<stone.length;i++)
 	  {
 	       ele[stone[i]-97] = 1;
 	  }
-	  display(ele);
 	  stones--;
 	  for(int i = 0;i<stones;i++)
 	  {
 	       stone = sc.next().toCharArray();
-	       stone = qs.quickSort(stone,0,stone.length-1);
-	       display(stone);
-	       System.out.println();
+	       stone = quickSort(stone,0,stone.length-1);
 	       stone = remDupli(stone);
-	       display(stone);
-	       System.out.println();
 	       for(int j = 0;j<stone.length;j++)
 	       {
 		    ele[stone[j]-97]++;
 	       }
-	       display(ele);
+	       
 	  }
 	  int j = 0;
 	  for(int i = 0;i<ele.length;i++)
@@ -75,18 +65,30 @@ class GemStones
 	  return s;
 	  
      }
-     void display(char[] Arr) {
-	  for (int trk = 0; trk < Arr.length; trk++) {
-
-	       System.out.println(Arr[trk] + " ");
+     char[] quickSort(char[] nos,int st,int end)
+     {
+         if(st<end)
+	  {
+	       int indOfP = partition(nos,st,end);
+	       quickSort(nos,st,indOfP-1);
+	       quickSort(nos,indOfP+1,end);
 	  }
-	  System.out.println();
+	  return nos;
      }
-     void display(int[] Arr) {
-	  for (int trk = 0; trk < Arr.length; trk++) {
 
-	       System.out.println(Arr[trk] + " ");
+int partition(char[] nos,int st,int end)
+     {
+	  int pivInd = st-1;
+	  for(int i = st;i<= end;i++)
+	  {
+	       if(nos[i]<=nos[end])
+	       {
+		    pivInd++;
+		    char tmp = nos[pivInd];
+		    nos[pivInd] = nos[i];
+		    nos[i]=tmp;
+	       }
 	  }
-	  System.out.println();
+	  return pivInd;
      }
 }

@@ -1,3 +1,5 @@
+package atice;
+
 class GreedyActivSelec
 {
      int[] s = {0,1,3,0,5,3,5,6,8,8,2,12};

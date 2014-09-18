@@ -1,6 +1,7 @@
+package atice;
 class ArrayList
 {
-    int vertex;
+     int vertex;
      LinkdList<Vertex> li= new LinkdList<Vertex>();
-    
+
 }

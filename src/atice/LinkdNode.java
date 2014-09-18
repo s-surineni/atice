@@ -1,3 +1,4 @@
+package atice;
 class LinkdNode<T>
 {
      LinkdNode<T> next;

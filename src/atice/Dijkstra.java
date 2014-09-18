@@ -1,3 +1,5 @@
+package atice;
+
 import java.util.Scanner;
 
 class Dijkstra
@@ -12,7 +14,7 @@ class Dijkstra
      {
           Scanner sc = new Scanner(System.in);
           GraphAL grph =new GraphAL();
-          ArrayList[] al= grph.popWeighGraph();
+          ArrayList[] al= grph.createGraph();
           Vertex[] ver = new Vertex[al.length];
           int glen = ver.length;
           int locs[] = new int[glen];

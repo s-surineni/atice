@@ -1,19 +1,9 @@
 package atice;
 
-/*
- * this class tells how to take input from terminal
- * using scanner class
- */
-
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-/**
- *
- * @author vinnu
- */
-public class JavaL {
+class JavaL {
 
     /**
      * @param args the command line arguments
@@ -42,13 +32,13 @@ public class JavaL {
 	       System.out.println(Arr[trk] + " ");
 	  }
      }
-     
-     //void display(int[] Arr) {
-//	  for (int trk = 0; trk < Arr.length; trk++) {
-//
-//	       System.out.println(Arr[trk] + " ");
-//	  }
-  //   }
+
+     void display(int[] Arr) {
+	  for (int trk = 0; trk < Arr.length; trk++) {
+
+	       System.out.println(Arr[trk] + " ");
+	  }
+     }
 
      void display(int[][] Arr) {
 	  System.out.println("Start of Display");

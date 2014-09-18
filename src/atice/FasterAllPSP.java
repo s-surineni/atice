@@ -1,3 +1,4 @@
+package atice;
 import java.util.Scanner;
 
 class FasterAllPSP

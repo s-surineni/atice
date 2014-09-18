@@ -1,3 +1,4 @@
+package atice;
 class AllPairsShortPath
 {
      JavaL jl = new JavaL();

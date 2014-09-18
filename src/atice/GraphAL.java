@@ -1,4 +1,4 @@
-//package atice;
+package atice;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.util.Scanner;
@@ -18,21 +18,9 @@ public class GraphAL {
 
      void begin()
      {
-	  createArrL();
+	  createGraph();
      }
 
-     private void createArrL()
-     {
-	  System.out.println("Enter the number of vertices in graph");
-	  try
-	  {
-	       sc = new Scanner(new File("wgraph"));
-	  }
-	  catch(FileNotFoundException e)
-	  {
-	  }
-	  popWeighGraph();
-     }
 
      void popGraph ()
      {
@@ -55,24 +43,28 @@ public class GraphAL {
 	  //System.out.println("in graph");
 	  for(int i=0;i<ver;i++)
 	  {
-	    //   System.out.println("next");
+	       //   System.out.println("next");
 	       for(LinkdNode<Vertex> lint=arrL[i].li.head ; lint!=null;lint = lint.next)
 	       {
-	//	    System.out.println(lint.ele.id);
+		    //	    System.out.println(lint.ele.id);
 		    //System.out.println(lint.ele.p.id);
 	       }
 	  } 
      }
-     ArrayList[] popWeighGraph ()
+     ArrayList[] createGraph ()
      {
+	  System.out.println("Enter name of the file");
 	  try
 	  {
-	       sc = new Scanner(new File("wgraph"));
+	       sc = new Scanner(System.in);
+	       String filNam = sc.next();
+	       sc = new Scanner(new File(filNam));
 	  }
 	  catch(FileNotFoundException e)
 	  {
-       }
-       ver = sc.nextInt();
+	       System.out.println("file not found");
+	  }
+	  ver = sc.nextInt();
 	  arrL = new ArrayList[ver];
 	  for(int i = 0;i<ver;i++)
 	  {
@@ -88,18 +80,21 @@ public class GraphAL {
 	       }
 
 	  }
-	  //System.out.println("in graph");
+	  //display(arrL);
+	  return arrL;
+     }
+     void display(ArrayList[] arrL)
+     {
+	  System.out.println("in graph");
 	  for(int i=0;i<ver;i++)
 	  {
-	 //      System.out.println("next vertex "+(i+1));
+	       System.out.println("next vertex "+(i));
 	       for(LinkdNode<Vertex> lint=arrL[i].li.head ; lint!=null;lint = lint.next)
 	       {
-	//	    System.out.print("id "+(lint.ele.id+1));
-	//	    System.out.println(" wei "+lint.ele.d);
-
-		   // System.out.println(lint.ele.p.id);
+		    System.out.print("id "+(lint.ele.id));
+		    System.out.println(" wei "+lint.ele.d);
 	       }
 	  }
-       return arrL;
+
      }
 }

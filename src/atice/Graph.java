@@ -1,6 +1,7 @@
+package atice;
+
 class Graph
 {
-     Dijkstra dk = new Dijkstra();
      public static void main(String[] a)
      {
 	  Graph g = new Graph();
@@ -11,9 +12,15 @@ class Graph
      {
 
      }
+     void display(Vertex[] Arr) {
+	  for (int trk = 0; trk < Arr.length; trk++) {
+	       System.out.println((Arr[trk].id) + " "+Arr[trk].d);
+	  }
+	  System.out.println();
+     }
+
      void initSingSource(Vertex v[],int src)
      {
-	  src--;
 	  int len = v.length;
 	  for(int itr = 0; itr<len;itr++)
 	  {
@@ -46,12 +53,6 @@ class Graph
 	  }
 	  if(min!=i)
 	  {
-	       System.out.println("in heap");
-	       System.out.println("vers");
-	       dk.display(ver);
-	       System.out.println("locs");
-	       dk.display(locs);
-	       System.out.println(" min "+(min+1)+" minid "+(ver[min].id+1)+" i "+(i+1)+" iid "+(ver[i].id+1));
 	       Vertex temp = ver[min];
 	       locs[ver[min].id]=i;
 	       locs[ver[i].id]=min;
@@ -63,6 +64,22 @@ class Graph
 	  }
      }
 
+     void relax(Vertex frm,Vertex to,int  dist)
+     {
+//	  System.out.println("from "+frm.id);
+//	  System.out.println("to "+to.id);
+	  int totaldist = frm.d+dist; 
+//	  System.out.println("dist "+totaldist);
+//	  System.out.println("pre dist "+to.d);
+	  if(to.d>totaldist)
+	  {
+	       to.d = totaldist;
+//	       System.out.println("now dist "+to.d);
+
+	       to.p = frm.id;
+	  }
+     }
+     
      void relax(Vertex[] ver,int to,int par,int dist,int dist2)
      {
 	  System.out.println("from "+(par+1));
