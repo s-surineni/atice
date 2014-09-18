@@ -80,7 +80,7 @@ public class GraphAL {
 	       }
 
 	  }
-	  //display(arrL);
+	  display(arrL);
 	  return arrL;
      }
      void display(ArrayList[] arrL)

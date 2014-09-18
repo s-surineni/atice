@@ -66,15 +66,15 @@ class Graph
 
      void relax(Vertex frm,Vertex to,int  dist)
      {
-//	  System.out.println("from "+frm.id);
-//	  System.out.println("to "+to.id);
+	  System.out.println("from "+frm.id);
+	  System.out.println("to "+to.id);
 	  int totaldist = frm.d+dist; 
-//	  System.out.println("dist "+totaldist);
-//	  System.out.println("pre dist "+to.d);
+	  System.out.println("dist "+totaldist);
+	  System.out.println("pre dist "+to.d);
 	  if(to.d>totaldist)
 	  {
 	       to.d = totaldist;
-//	       System.out.println("now dist "+to.d);
+	       System.out.println("now dist "+to.d);
 
 	       to.p = frm.id;
 	  }

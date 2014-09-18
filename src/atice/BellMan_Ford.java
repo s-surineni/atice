@@ -28,5 +28,13 @@ class BellMan_Ford
 	       gm.display(v);
 	  }
 	  gm.display(v);
+	  for(int j = 0;j<vers;j++)
+	  {
+	       for(LinkdNode<Vertex> tr = gph[j].li.head;tr != null;tr = tr.next)
+	       {
+		    if(v[tr.ele.id].d>v[j].d+tr.ele.d)
+			 System.out.println("negative cycle");
+	       }
+	  }
      }
 }
