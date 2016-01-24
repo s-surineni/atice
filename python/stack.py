@@ -34,4 +34,3 @@ while True:
 
     if option in operations:
         operations[option]()
-
