@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 class ChainNode():
     def __init__(self, ele, nxt):
         self.ele = ele
@@ -8,11 +10,13 @@ ChainNode(None, None)
 
 class Chain():
 
-    def __init__(self):
-        self.first_node = None
-        self.list_size = 0
+    def __init__(self, source_list = None):
 
-    def __init__(self, source_list):
+        if not source_list:
+            self.first_node = None
+            self.list_size = 0
+            return
+        
         self.list_size = source_list.list_size
 
         if self.list_size == 0:
@@ -24,7 +28,7 @@ class Chain():
         src_node = src_node.next
         target_node = self.first_node
 
-        while ! src_node:
+        while not src_node:
             target_node.nxt = ChainNode(src_node.ele, None)
             target_node = target_node.nxt
             src_node = src_node.nxt
@@ -68,10 +72,71 @@ class Chain():
         if check_index(index):
             if index == 0:
                 self.first_node = self.first_node.nxt
-        pass
+            else:
+                prev_node = self.first_node
+                for trk in range(index):
+                    prev_node = prev_node.nxt
+                prev_node.nxt = prev_node.nxt.nxt
+            self.list_size -= 1
+                
+                    
+    def insert(self, index = None, ele = None):
+        if index == None:
+            print('please insert index and element')
+            print()
+            index, ele = raw_input().split(' ')
+            index = int(index)
+            print(' index', index)
+            ele = int(ele)
+            
+        
+        if index < 0 or index > self.list_size + 1:
+            print("wont be able to insert")
+            return
+        
+        if index == 0:
+            self.first_node = ChainNode(ele, self.first_node)
+            # print('first_node ', first_node)
+            # print()
+        else:
+            prev_node = self.first_node
+            for trk in range(index):
+                prev_node = prev_node.nxt
+                # see here we are doing initialization and
+                # assigning next in the constructor itself
+            prev_node.nxt = ChainNode(ele, prev_node.nxt)
 
-    def insert(index, ele):
-        pass
+    def output(self):
+        curr_node = self.first_node
+        print('curr_node', curr_node)
+        print()
+        while curr_node != None:
+            print(curr_node.ele, end = ' ')
+            # print()
+            curr_node = curr_node.nxt
 
-    def output():
-        pass
+chain = Chain()
+menu = {
+    'c': chain.check_index,
+    's': chain.size,
+    'g': chain.get,
+    'i': chain.index_of,
+    'e': chain.erase,
+    'in': chain.insert,
+    'o': chain.output
+}
+
+
+
+while(True):
+    print('c for check_index')
+    print('s  for chain size')
+    print('g  for get')
+    print('i for index of')
+    print('e for erase')
+    print('in for insert')
+    print('o for output')
+    choice = raw_input('please choose one of the above choice')
+    if choice == 'x':
+        break
+    menu[choice]()
