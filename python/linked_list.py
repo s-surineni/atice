@@ -100,12 +100,13 @@ class Chain():
 
     def output(self):
         curr_node = self.first_node
-        print('curr_node', curr_node)
-        print()
+        # print('curr_node', curr_node)
+        # print()
         while curr_node != None:
             print(curr_node.ele, end = ' ')
             # print()
             curr_node = curr_node.nxt
+        print()
 
 chain = Chain()
 
@@ -134,9 +135,9 @@ while(True):
     print('c for check_index')
     print('s  for chain size')
     print('g  for get')
-    print('i for index of')
+    print('in for index of')
     print('e for erase')
-    print('in for insert')
+    print('i for insert')
     print('o for output')
     choice = raw_input('please choose one of the above choice: ')
     if choice == 'x':
