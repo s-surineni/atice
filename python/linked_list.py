@@ -81,14 +81,6 @@ class Chain():
                 
                     
     def insert(self, index = None, ele = None):
-        if index == None:
-            print('please insert index and element')
-            print()
-            index, ele = raw_input().split(' ')
-            index = int(index)
-            print(' index', index)
-            ele = int(ele)
-            
         
         if index < 0 or index > self.list_size + 1:
             print("wont be able to insert")
@@ -116,13 +108,23 @@ class Chain():
             curr_node = curr_node.nxt
 
 chain = Chain()
+
+def inserter():
+        print('please insert index and element')
+        print()
+        index, ele = raw_input().split(' ')
+        index = int(index)
+        # print(' index', index)
+        ele = int(ele)
+        chain.insert(index, ele)
+        
 menu = {
     'c': chain.check_index,
     's': chain.size,
     'g': chain.get,
-    'i': chain.index_of,
+    'in': chain.index_of,
     'e': chain.erase,
-    'in': chain.insert,
+    'i': inserter,
     'o': chain.output
 }
 
@@ -136,7 +138,7 @@ while(True):
     print('e for erase')
     print('in for insert')
     print('o for output')
-    choice = raw_input('please choose one of the above choice')
+    choice = raw_input('please choose one of the above choice: ')
     if choice == 'x':
         break
     menu[choice]()
