@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class LinearList:
+class LinearList(ABC):
     @abstractmethod
     def is_empty(self):
         pass
