@@ -1,6 +1,7 @@
 class ChangeArrayLength:
     @staticmethod
-    def change_len_1D(arr, n, new_len):
+    def change_len_1D(arr, new_len):
+        n = len(arr)
         if n > new_len:
             raise ValueError
 
