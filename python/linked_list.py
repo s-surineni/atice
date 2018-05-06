@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+
 class ChainNode():
     def __init__(self, ele, nxt):
         self.ele = ele
