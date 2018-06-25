@@ -1,4 +1,3 @@
-from __future__ import print_function
 import sys
 
 queue = [None] * 3
@@ -23,7 +22,7 @@ def enQueue():
         print ('Queue Overflow', file=sys.stderr)
     else:
         print('input value to en-queue')
-        queue[tail] = raw_input()
+        queue[tail] = input()
         tail += 1
         tail %= qLen
         print (queue)
@@ -40,7 +39,7 @@ while True:
     print('i to en-queue')
     print('d to de-queue')
     print('e to exit')
-    option = raw_input()
+    option = input()
     if(option == 'e'):
         break
 
