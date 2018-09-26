@@ -32,6 +32,9 @@ class Vertex:
     def set_previous(self, pre):
         self.previous = pre
 
+    def get_previous(self):
+        return self.previous
+
     def __str__(self):
         return str(self.id) + ' adjacent: ' + str([x.id for x in self.adjacent])
 
@@ -65,9 +68,10 @@ class Graph:
 
 
 def dijkstra(a_graph, start, end):
-    start.distance = 0
+    start.set_distance(0)
 
-    unvisited_q = [(v.get_distance(), (k)) for (k, v) in a_graph]
+    unvisited_q = [[v.get_distance(), (k)] for (k, v) in a_graph]
+    print('unvisited_q', unvisited_q)
     for u,v in unvisited_q:
         print(v)
     print(unvisited_q)
@@ -75,18 +79,27 @@ def dijkstra(a_graph, start, end):
 
     while len(unvisited_q):
         current_v = heapq.heappop(unvisited_q)
-        current_v = a_graph.get_vertex(current_v[1])
-        current_v.set_visited()
+        print('current_v', current_v)
+        current_v_obj = a_graph.get_vertex(current_v[1])
+        current_v_obj.set_visited()
         # print('*' * 80)
         # print('current_v.adjacent', current_v.adjacent)
-        for next in current_v.adjacent:
+        for next in current_v_obj.adjacent:
+            print('next', next)
             if next.visited:
                 continue
-            new_dist = current_v.get_distance() + current_v.get_weight(next)
+            new_dist = current_v_obj.get_distance() + current_v_obj.get_weight(next)
+            print('new_dist', new_dist)
             if new_dist < next.get_distance():
+                print('called set_distance')
                 next.set_distance(new_dist)
-                next.set_previous(current_v)
-
+                print('new distance', next.get_distance())
+                next.set_previous(current_v_obj)
+                for dv in unvisited_q:
+                    if dv[1] == next.id:
+                        dv[0] = new_dist
+                print('at end', current_v)
+        heapq.heapify(unvisited_q)
 
 # if __name__ == '__main__':
 # if True:
@@ -110,3 +123,6 @@ g.add_edge('d', 'e', 6)
 g.add_edge('e', 'f', 9)
 
 dijkstra(g, g.get_vertex('a'), g.get_vertex('e'))
+
+for (u, v) in g:
+    print(u, v.get_previous())
