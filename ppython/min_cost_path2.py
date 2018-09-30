@@ -18,7 +18,7 @@ def shortest_path(grid2d, row_size, col_size):
     for a_row in range(row_size):
         dist_matrix.append([sys.maxsize] * col_size)
     dist_matrix[0][0] = grid2d[0][0]
-    print(dist_matrix)
+    # print(dist_matrix)
 
     dr = [-1, 0, 1, 0]
     dc = [0, 1, 0, -1]
@@ -33,8 +33,8 @@ def shortest_path(grid2d, row_size, col_size):
                 min_dist_ind = trk3
 
         closest_cell = path_cells.pop(trk3)
-        print('*' * 80)
-        print('closest_cell', closest_cell)
+        # print('*' * 80)
+        # print('closest_cell', closest_cell)
 
 
         for trk in range(4):
@@ -43,11 +43,11 @@ def shortest_path(grid2d, row_size, col_size):
 
             if not is_inside_grid(x, y):
                 continue
-            print('after continue')
-            print('x , y ', x, y)
-            print('sum', dist_matrix[closest_cell[0]][closest_cell[1]] + grid2d[x][y])
+            # print('after continue')
+            # print('x , y ', x, y)
+            # print('sum', dist_matrix[closest_cell[0]][closest_cell[1]] + grid2d[x][y])
             if dist_matrix[x][y] > dist_matrix[closest_cell[0]][closest_cell[1]] + grid2d[x][y]:
-                print('inside distance comparison')
+                # print('inside distance comparison')
                 if dist_matrix[x][y] != sys.maxsize:
                     for trk2 in range(len(path_cells)):
                         if (path_cells[trk2][0], path_cells[trk2][1]) == (x, y):
@@ -59,9 +59,9 @@ def shortest_path(grid2d, row_size, col_size):
                     path_cells.append([x, y, dist_matrix[x][y]])
 
                 dist_matrix[x][y] = dist_matrix[closest_cell[0]][closest_cell[1]] + grid2d[x][y]
-    print('dist_matrix')
-    print(dist_matrix)
-
+    # print('dist_matrix')
+    # print(dist_matrix)
+    print(dist_matrix[row_size - 1][col_size - 1])
 
 for a_tc in range(tc):
     size = int(input().strip())
@@ -72,6 +72,6 @@ for a_tc in range(tc):
 
     for trk in range(size):
         grid2d.append(grid[(trk* size):((trk + 1) * size)])
-    print(grid2d)
+    # print(grid2d)
 
     shortest_path(grid2d, size, size)
