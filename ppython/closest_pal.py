@@ -1,3 +1,4 @@
+# https://practice.geeksforgeeks.org/problems/closest-palindrome/0
 t = int(input())
 while t:
     n = input()
@@ -15,9 +16,9 @@ while t:
     q = str(int(s)-1)
     print('p, q', p, q)
     if(len(n)%2!=0):
-        r = s+s[::-1][1:]
-        p = p+p[::-1][1:]
-        q = q+q[::-1][1:]
+        r = s+(s[::-1][1:])
+        p = p+(p[::-1][1:])
+        q = q+(q[::-1][1:])
     else:
         r = s+s[::-1]
         p = p+p[::-1]
