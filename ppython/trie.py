@@ -26,6 +26,9 @@ class Trie:
     def _char_to_index(self, ch):
         return ord(ch) - ord('a')
 
+    def _index_to_char(self, idx):
+        return chr(idx + ord('a')) 
+
     def insert(self, key):
         p_crawl = self.root
 
@@ -34,7 +37,10 @@ class Trie:
             if not p_crawl.children[idx]:
                 p_crawl.children[idx] = self.get_node()
             p_crawl = p_crawl.children[idx]
-        p_crawl.is_end_of_word = True
+        if not p_crawl.is_end_of_word:
+            p_crawl.is_end_of_word = 1
+        else:
+            p_crawl.is_end_of_word += 1
 
     def search(self, key):
         p_crawl = self.root
@@ -86,16 +92,22 @@ class Trie:
             self._delete_helper(self.root, key, 0)
 
 
-if __name__ == '__main__':
-    trie = Trie()
-    trie.insert('the')
-    trie.insert('these')
-    trie.insert('their')
-    trie.insert('thaw')
+    def pre_order_util(self, c_node, c_str, max_vals):
+        if c_node.find_if_leaf_node():
+            if max_vals[0] > c_node.find_if_free_node():
+                max_vals[0] = c_node.find_if_free_node()
+                max_vals[1] = c_str
 
-    print(trie.search('the'))
-    # print(trie.search('there'))
-    print(trie.delete_key('the'))
-    print(trie.delete_key('the'))
-    print(trie.search('the'))
+        for idx in range(len(c_node.children)):
+            if c_node.children[idx]:
+                self.pre_order_util(c_node.children[idx], c_str + self._index_to_char(idx),
+                                    max_vals)
+            
+    def pre_order(self):
+        c_node = self.root
+        max_vals = [0, '']
+        self.pre_order_util(c_node, '', max_vals)
+        print(max_vals)
+
+
 
