@@ -1,7 +1,7 @@
-# https://www.geeksforgeeks.org/trie-insert-and-search/
+# https://practice.geeksforgeeks.org/problems/most-frequent-word-in-an-array-of-strings/0
 class TrieNode:
     def __init__(self):
-        self.children = [None] * 26
+        self.children = [None] * 52
         self.is_end_of_word = False
 
     def find_if_leaf_node(self):
@@ -24,10 +24,16 @@ class Trie:
         return TrieNode()
 
     def _char_to_index(self, ch):
-        return ord(ch) - ord('a')
-
+        idx = ord(ch) - ord('A') 
+        if idx > 25:
+            idx = ord(ch) - ord('a') + 26
+        return idx
+        
     def _index_to_char(self, idx):
-        return chr(idx + ord('a')) 
+        if idx < 26:
+            return chr(idx + ord('A')) 
+        else:
+            return chr(idx + ord('a') - 26) 
 
     def insert(self, key):
         p_crawl = self.root
@@ -37,10 +43,12 @@ class Trie:
             if not p_crawl.children[idx]:
                 p_crawl.children[idx] = self.get_node()
             p_crawl = p_crawl.children[idx]
-        if not p_crawl.is_end_of_word:
+        if not p_crawl.find_if_leaf_node():
             p_crawl.is_end_of_word = 1
         else:
             p_crawl.is_end_of_word += 1
+        pass
+        # print('key to insert is ', key)
 
     def search(self, key):
         p_crawl = self.root
@@ -94,8 +102,12 @@ class Trie:
 
     def pre_order_util(self, c_node, c_str, max_vals):
         if c_node.find_if_leaf_node():
-            if max_vals[0] > c_node.find_if_free_node():
-                max_vals[0] = c_node.find_if_free_node()
+            # print('c_str', c_str)
+            # print('true here')
+            # print('leaf node is {}'.format(c_str))
+            if max_vals[0] < c_node.find_if_leaf_node():
+                max_vals[0] = c_node.find_if_leaf_node()
+                # print('c_str maxted', c_str)
                 max_vals[1] = c_str
 
         for idx in range(len(c_node.children)):
@@ -107,7 +119,19 @@ class Trie:
         c_node = self.root
         max_vals = [0, '']
         self.pre_order_util(c_node, '', max_vals)
-        print(max_vals)
+        print(max_vals[1])
 
 
+test_cases = int(input().strip())
 
+for a_tc in range(test_cases):
+    str_cnt = (input())
+    str_list = input().strip().split()
+    # print(str_list)
+    a_trie = Trie()
+
+    for a_str in str_list:
+        # print(a_str)
+        # print(wc, end=' ')
+        a_trie.insert(a_str)
+    a_trie.pre_order()
