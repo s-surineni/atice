@@ -5,7 +5,73 @@ import sys
 tc = int(input().strip())
 
 
-    
+class PriorityQueue():
+    def __init__(self, size):
+        self.curr_size = 0
+        self.array= [None] * size
+        self.position = {}      # stores position of vertex in array
+
+    def is_empty(self):
+        return self.curr_size == 0
+
+    def min_heapify(self, idx):
+        l_c = self.left_c_idx(idx)
+        r_c = self.right_c_idx(idx)
+
+        if l_c < self.curr_size and self.array[l_c][0] < self.array[idx][0]:
+            smallest = l_c
+        else:
+            smallest = idx
+        if r_c < self.curr_size and self.array[r_c][0] < self.array[smallest][0]:
+            smallest = r_c
+        if smallest != idx:
+            self.swap(idx, smallest)
+            self.min_heapify(smallest)
+
+    def swap(self, i, j):
+        self.position[self.array[i][1]] = j
+        self.position[self.array[j][1]] = i
+        self.array[i], self.array[j] = self.array[j], self.array[i]
+
+    def left_c_idx(self, idx):
+        return (2 * idx) + 1
+
+    def right_c_idx(self, idx):
+        return (2 * idx) + 2
+
+    def par_idx(self, idx):
+        return idx // 2
+
+    def decrease_key(self, d_v, new_dist):
+        idx = self.position[d_v[1]]
+        self.array[idx] = (new_dist, d_v[1])
+        while idx > 0 and self.array[self.par_idx(idx)][0] > self.array[idx][0]:
+            self.swap(idx, self.par_idx(idx))
+            idx = self.par_idx(idx)
+
+    def insert(self, d_v):
+        self.position[d_v[1]] = self.curr_size
+        print('*' * 80)
+        print('curr_size', self.curr_size)
+        print('array', self.array)
+        self.array[self.curr_size] = (sys.maxsize, d_v[1])
+        self.curr_size += 1
+        # self.array.append((sys.maxsize, d_v[1]))
+        self.decrease_key((sys.maxsize, d_v[1]), d_v[0])
+
+    def extract_min(self):
+        print('*' * 80)
+        print('self.array', self.array)
+        print('self.position', self.position)
+        min_node = self.array[0][1]
+        self.array[0] = self.array[self.curr_size - 1]
+        self.curr_size -= 1
+        self.min_heapify(0)
+        print('min_node', min_node)
+        del self.position[min_node]
+        return min_node
+
+
 def shortest_path(grid2d, row_size, col_size):
     def is_inside_grid(x, y):
         if (x >= row_size or y >= col_size or x < 0 or y < 0):
@@ -23,8 +89,8 @@ def shortest_path(grid2d, row_size, col_size):
     dr = [-1, 0, 1, 0]
     dc = [0, 1, 0, -1]
 
-    path_cells = [(0, 0, 0)]
-
+    p_q = PriorityQueue(row_size * col_size)
+    p_q.insert((0, 0, 0))
     while path_cells:
         min_dist_ind = 0
         min_dist = sys.maxsize
