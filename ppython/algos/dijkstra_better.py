@@ -7,6 +7,8 @@ class PriorityQueue():
         self.curr_size = 0
         self.array= [None] * size
         self.position = {}      # stores position of vertex in array
+        # key indicates vertex
+        # values indicates position 
 
     def is_empty(self):
         return self.curr_size == 0
@@ -51,6 +53,7 @@ class PriorityQueue():
         print('*' * 80)
         print('curr_size', self.curr_size)
         print('array', self.array)
+        # inserting into heap here
         self.array[self.curr_size] = (sys.maxsize, d_v[1])
         self.curr_size += 1
         # self.array.append((sys.maxsize, d_v[1]))
@@ -70,17 +73,21 @@ class PriorityQueue():
 
 
 class Graph:
-    def __init__(self, num):
+    def __init__(self, vert_num):
         self.adj_list = {}
-        self.num_nodes = num
-        self.dist_from_src = [sys.maxsize] * num
-        self.parent = [-1] * num
+        self.num_nodes = vert_num
+        self.dist_from_src = [sys.maxsize] * vert_num
+        # stores parent of vertex stored at index i
+        self.parent = [-1] * vert_num
 
 
+    # initializing parent and distance from parent for all vertices
     def dijkstra(self, src):
         self.parent = [-1] * self.num_nodes
 
-        for vert in self.adj_list.keys():
+        # need not have called self.adj_list.keys() because
+        # we already know the vertices will be from 0 to self.num_nodes
+        for vert in self.adj_list.keys():  
             self.dist_from_src[vert] = sys.maxsize
             self.parent[vert] = -1
 
