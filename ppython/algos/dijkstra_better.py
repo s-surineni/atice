@@ -1,4 +1,5 @@
 # https://github.com/TheAlgorithms/Python/blob/master/data_structures/Graph/dijkstra_algorithm.py
+#newer https://github.com/TheAlgorithms/Python/blob/master/data_structures/graph/dijkstra_algorithm.py  
 import sys
 
 
