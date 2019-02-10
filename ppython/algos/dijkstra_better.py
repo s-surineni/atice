@@ -69,7 +69,7 @@ class PriorityQueue():
         self.curr_size -= 1
         self.min_heapify(0)
         print('min_node', min_node)
-        del self.position[min_node]
+        # del self.position[min_node]  # this might not be necessary
         return min_node
 
 
