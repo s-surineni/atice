@@ -11,17 +11,17 @@ import sys
 def countingValleys(n, s):
     valleys = 0
     level = 0
-    in_valley = False
+    # in_valley = False
     for step in s:
         if step == 'U':
             level += 1
         else:
             level -= 1
-        if level < 0 and not in_valley:
-            in_valley = True
-        if in_valley and level == 0:
+        # if level < 0 and not in_valley:
+            # in_valley = True
+        if step == 'U' and level == 0:
             valleys += 1
-            in_valley = False
+            # in_valley = False
     return (valleys)
 
 if __name__ == '__main__':
