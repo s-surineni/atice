@@ -1,5 +1,5 @@
 class Tree:
-'''Abstract base class representing a tree structure.'''
+    '''Abstract base class representing a tree structure.'''
     class Position:
         '''An abstraction representing the location of a single element.'''
         def element(self):
@@ -11,7 +11,8 @@ class Tree:
             raise NotImplementedError('must be implemented by subclass')
 
         def __ne__(self, other):
-            '''Return True if other Position does not represent the same location.'''
+            '''Return True if other Position does not represent
+            the same location.'''
             return self != other
 
     def root(self):
@@ -33,3 +34,10 @@ class Tree:
     def __len__(self):
         '''Return the total number of elements in the tree.'''
         raise NotImplementedError('must be implemented by subclass')
+
+    def depth(self, p):
+        '''Return the number of levels separating Position p from the root.'''
+        if self.is_root(p):
+            return 0
+        else:
+            return 1 + self.depth(self.parent(p))
