@@ -9,6 +9,7 @@ class BinaryTreeNode:
         self.r_child = r_child
         self.visit = visit
 
+
 class LinkedBinaryTree:
 
     def __init__(self):
