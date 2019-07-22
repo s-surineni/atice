@@ -1,3 +1,6 @@
+from collections import MutableMapping
+
+
 class MapBase(MutableMapping):
     class _Item:
         __slots__ = '_key', '_value'
