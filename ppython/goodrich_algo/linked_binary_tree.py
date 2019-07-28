@@ -14,11 +14,11 @@ class LinkedBinaryTree(BinaryTree):
 
     class Position(BinaryTree.Position):
         def __init__(self, container, node):
-            self._container = container
+            self._container = container # why the need for position and container
             self._node = node
 
         def element(self):
-            return self._node._element
+            return self._node._element # why node and element won't one of them do?
 
         def __eq__(self, other):
             return self._node is other._node
@@ -62,7 +62,7 @@ class LinkedBinaryTree(BinaryTree):
         return count
 
     def _add_root(self, e):
-        if self._root is not None:
+        if self._root is not None: # why is not None instead of if self._root
             raise ValueError('Root exists')
         self._size = 1
         self._root = self._Node(e)

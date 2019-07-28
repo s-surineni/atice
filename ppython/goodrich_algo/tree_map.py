@@ -135,3 +135,26 @@ class TreeMap(LinkedBinaryTree, MapBase):
         while p is not None:
             yield p.key()
             p = self.after(p)
+
+    def delete(self, p):
+        self._validate(p)
+        if self.left(p) and self.right(p):
+            replacement = self._subtree_last_position(self.left(p))
+            self._replace(p, replacement.element())
+            p = replacement
+        parent = self.parent(p)
+        self._delete(p)
+        self._rebalance_delete(parent)
+
+    def __delitem__(self, k):
+        if not self.is_empty():
+            p = self._subtree_search(self.root(), k)
+            if k == p.key():
+                self.delete(p)
+                return
+            self._rebalance_access(p)
+        raise KeyError('Key Error: ' + repr(k))
+
+    def _rebalance_insert(self, p): pass
+    def _rebalance_delete(self, p): pass
+    def _rebalance_access(self, p): pass
