@@ -53,9 +53,14 @@ class Tree:
 
     def _height1(self):
         return max(self.depth(p) for p in self.positions() if self.is_leaf(p))
-
+    # shouldn't children be the method of node?
     def _height2(self, p):
         if self.root(p):        
             return 0
         else:
             return max(1 + (self._height2(c) for c in self.children(p)))  # why not p.children ?
+
+    def height(self, p=None):
+        if not p:
+            p = self.root()
+        return self._height2(p)
