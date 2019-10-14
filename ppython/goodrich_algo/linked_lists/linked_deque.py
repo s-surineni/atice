@@ -12,4 +12,18 @@ class LinkedDeque(_DoublyLinkedBase):
             raise Empty('Deque is empty')
         return self._trailer._prev._element
 
-    def 
+    def insert_first(self, e):
+        self._insert_between(e, self._header, self.header._nxt)
+
+    def insert_last(self, e):
+        self.insert_between(e, self._trailer.prev, self.trailer)
+
+    def delete_first(self):
+        if self.is_empty():
+            raise Empty('Deque is empty')
+        self._delete_node(self._header._nxt)
+
+    def delete_last(self):
+        if self.is_empty():
+            raise Empty('Deque is empty')
+        self._delete_node(self._trailer._prev)
