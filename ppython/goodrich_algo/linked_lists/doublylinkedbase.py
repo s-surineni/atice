@@ -5,11 +5,11 @@ class _DoublyLinkedBase:
             self._prev = prev
             self._element = element
 
-    def __init__(self, prev, nxt):
-        self.header = _Node(None, None, None)
-        self.trailer = _Node(None, None, None)
-        self.header._nxt = self.trailer  # is it ok to access _nxt like this?
-        self.trailer._prev = self.header
+    def __init__(self):
+        self._header = self._Node(None, None, None)
+        self._trailer = self._Node(None, None, None)
+        self._header._nxt = self._trailer  # is it ok to access _nxt like this?
+        self._trailer._prev = self._header
         self._size = 0
 
     def __len__(self):
@@ -19,7 +19,7 @@ class _DoublyLinkedBase:
         return self._size == 0
 
     def _insert_between(self, e, predecessor, successor):
-        new_node = _Node(e, predecessor, successor)
+        new_node = self._Node(e, predecessor, successor)
         predecessor._nxt = new_node
         successor._prev = new_node
         self._size += 1
