@@ -1,6 +1,6 @@
 class _DoublyLinkedBase:
     class _Node:
-        def __init__(self, element, nxt, prev):
+        def __init__(self, element, prev, nxt):
             self._nxt = nxt
             self._prev = prev
             self._element = element
@@ -29,6 +29,6 @@ class _DoublyLinkedBase:
         node._prev._nxt = node._nxt
         node._nxt._prev = node._prev
         self._size -= 1
-        element = node.element
+        element = node._element
         node._nxt = node._prev = node.element = None
         return element

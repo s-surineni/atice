@@ -22,7 +22,7 @@ class PositionalList(_DoublyLinkedBase):
             raise TypeError('p must be propoer Position type')
         if p._container is not self:
             raise ValueError('p does not belong to this container')
-        if p._node._next is None:
+        if p._node._nxt is None:
             raise ValueError('p is no longer valid')
         return p._node
 
@@ -65,6 +65,10 @@ class PositionalList(_DoublyLinkedBase):
     def add_after(self, p, e):
         original = self._validate(p)  # !getting node first not using the passed position
         return self._insert_between(e, original, original._nxt)
+
+    def add_before(self, p, e):
+        original = self._validate(p)
+        return self._insert_between(e, original._prev, original)
 
     def delete(self, p):
         node = self._validate(p)
