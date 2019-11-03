@@ -133,3 +133,33 @@ class LinkedBinaryTree(BinaryTree):
             node._right_child = t2._root
             t2._root = None
             t2._size = 0
+
+    def preorder(self):
+        if not self.is_empty():
+            for p in self._subtree_preorder(self._root):
+                yield p
+
+    def _subtree_preorder(self, p):
+        yield p
+        for c in self.get_children(p):
+            for other in self._subtree_preorder(p):
+                yield other
+
+    def positions(self):
+        # return self.preorder()
+        pass
+
+    def postorder(self):
+        if not self.is_empty():
+            for p in self._subtree_postorder(self._root):
+                yield p
+
+    def _subtree_postorder(self, p):
+        for c in self.get_children(p):
+            for other in self._postorder(c):
+                yield other
+        yield p
+
+    def depth_first(self):
+        if not self.is_empty():
+            fringe = 
