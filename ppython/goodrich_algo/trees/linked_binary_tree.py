@@ -160,6 +160,12 @@ class LinkedBinaryTree(BinaryTree):
                 yield other
         yield p
 
-    def depth_first(self):
+    def breadth_first(self):
         if not self.is_empty():
-            fringe = 
+            fringe = LinkedQueue()
+            fringe.enqueue(self._root)
+            while not fringe.is_empty():
+                pos = fringe.dequeue()
+                yield pos
+                for a_child in pos.get_children():
+                    fringe.enqueue(a_child)
