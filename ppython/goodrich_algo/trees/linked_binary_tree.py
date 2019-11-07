@@ -169,3 +169,20 @@ class LinkedBinaryTree(BinaryTree):
                 yield pos
                 for a_child in pos.get_children():
                     fringe.enqueue(a_child)
+
+    def inorder(self):
+        if not self.is_empty():
+            for p in self._subtree_inorder(self._root):
+                yield p
+
+    def _subtree_inorder(self, pos):
+        if self.get_left_child(pos):  # is this check necessary?
+            for other in self._subtree_inorder(self.get_left_child(p)):
+                yield other
+        yield p
+        if self.get_right_child(pos):
+            for other in self._subtree_inorder(self.get_right_child(p)):
+                yield other
+
+    def get_root(self, e):
+        return self._make_position(self._root)
