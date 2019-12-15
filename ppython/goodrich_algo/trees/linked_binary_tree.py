@@ -3,6 +3,8 @@ from abstract_binary_tree import BinaryTree
 
 class LinkedBinaryTree(BinaryTree):
     class _Node:
+        __slots__ = '_element', '_parent', '_left_child', '_right_child'
+
         def __init__(self, element,
                      parent=None,
                      left_child=None,
@@ -184,5 +186,15 @@ class LinkedBinaryTree(BinaryTree):
             for other in self._subtree_inorder(self.get_right_child(p)):
                 yield other
 
-    def get_root(self, e):
-        return self._make_position(self._root)
+    # def get_root(self, e):
+    #     return self._make_position(self._root)
+
+    def num_children(self, p):
+        node = self._validate(p)
+
+        count = 0
+        if node._left_child:
+            count += 1
+        if node._right_child:
+            count += 1
+        return count

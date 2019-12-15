@@ -28,7 +28,7 @@ class Tree:
         return self.root() == p
 
     def is_leaf(self, p):
-        return self.num_children == 0
+        return self.num_children(p) == 0
 
     def is_empty(self):
         return len(self) == 0
