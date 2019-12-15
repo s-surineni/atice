@@ -47,5 +47,7 @@ def build_expression_tree(expr_str):
     return expr_stack.pop()
 
 
-expression = ' ( 2 + 3 ) '
+expression = '( 2 + 3 )'
+expression = '( ( 2 + 3 ) + 4 )'
+
 print(build_expression_tree(expression))
