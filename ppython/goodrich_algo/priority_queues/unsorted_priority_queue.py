@@ -36,4 +36,14 @@ class UnsortedPriorityQueue(PriorityQueueBase):
     def remove_min(self):
         p = self._find_min()
         item = self._data.delete(p)
-        return (item._key, item._element)
+        return (item._key, item._value)
+
+
+if __name__ == '__main__':
+    upq = UnsortedPriorityQueue()
+    upq.add(5, 'f')
+    upq.add(3, 't')
+    upq.add(1, 'o')
+    upq.add(7, 's')
+    print(upq.remove_min())
+    print(upq.remove_min())
