@@ -1,4 +1,4 @@
-from doublylinkedbase import _DoublyLinkedBase
+from .doublylinkedbase import _DoublyLinkedBase
 
 
 class PositionalList(_DoublyLinkedBase):
