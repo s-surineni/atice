@@ -2,8 +2,10 @@ from .abstract_priority_queue import PriorityQueueBase
 
 
 class HeapPrioriryQueue(PriorityQueueBase):
-    def __init__(self):
-        self._data = []
+    def __init__(self, contents=()):
+        self._data = [self._Item(k, v) for k, v in contents]
+        if self._data:
+            self._heapify()
 
     def __len__(self):
         return len(self._data)
@@ -25,6 +27,11 @@ class HeapPrioriryQueue(PriorityQueueBase):
         item = self._data.pop()
         self._downheap(0)
         return (item._key, item._value)
+
+    def _heapify(self):
+        start = (len(self._data) - 1)
+        for j in range(start, -1, -1):
+            self._downheap(j)
 
     def _upheap(self, j):
         parent = self._get_parent(j)
@@ -71,3 +78,5 @@ if __name__ == '__main__':
     hpq.add(3, 't')
     print(hpq.remove_min())
     print(hpq.remove_min())
+    hpq2 = HeapPrioriryQueue([(2, 't'), (8, 'e'), (6, 'e')])
+    print(hpq2.remove_min())
