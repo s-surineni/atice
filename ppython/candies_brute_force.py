@@ -6,7 +6,7 @@ rate_len = len(ratings)
 havent_updated_candies = False
 
 candies = [1] * rate_len
-
+# How is it working?
 while not havent_updated_candies:
     havent_updated_candies = True
     for idx in range(rate_len):
