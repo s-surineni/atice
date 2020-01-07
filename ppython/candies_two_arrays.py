@@ -16,3 +16,4 @@ for idx in range((rate_len) - 2, -1, -1):
 for idx in range(rate_len):
     candies[idx] = max(rtl[idx], ltr[idx])
 print(candies)
+p
