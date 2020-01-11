@@ -1,16 +1,18 @@
 class Solution:
     def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:
-        rmaxes = [0] * len(grid)
-        cmaxes = [0] * len(grid)
+        a_num = int(input('Please enter a number: ').strip())
 
-        for r_i in range(len(grid)):
-            for c_i in range(len(grid)):
-                rmaxes[r_i] = max(rmaxes[r_i], grid[r_i][c_i])
-                cmaxes[c_i] = max(cmaxes[c_i], grid[r_i][c_i])
+        low = 0
+        high = a_num // 2               # because a sqrt can never be greater than num // 2
 
-        ans = 0
+        while low < high:
+            mid = (low + high) // 2
 
-        for r_i in range(len(grid)):
-            for c_i in range(len(grid)):
-                ans += min(rmaxes[r_i], cmaxes[c_i]) - grid[r_i][c_i]
-        return (ans)
+            if mid ** 2 <= a_num < (mid + 1) ** 2:
+                break
+            elif a_num < mid ** 2:
+                high = mid
+            else:
+                low = mid + 1
+            print(low, high)
+        print('sqrt of {} is {}'.format(a_num, mid))

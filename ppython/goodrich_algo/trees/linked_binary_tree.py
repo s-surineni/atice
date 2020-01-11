@@ -1,4 +1,4 @@
-from abstract_binary_tree import BinaryTree
+from .abstract_binary_tree import BinaryTree
 
 
 class LinkedBinaryTree(BinaryTree):
@@ -81,7 +81,7 @@ class LinkedBinaryTree(BinaryTree):
         node = self._validate(p)
         if node._left_child:
             raise ValueError('Left child exists already')
-        node._left_child = self._node(e, node)
+        node._left_child = self._Node(e, node)
         self._size += 1
         return self._make_position(node._left_child)
 
