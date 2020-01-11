@@ -36,4 +36,4 @@ while curr_idx < num_eles:
     print('curr_idx', curr_idx)
 
 for a_node in tree.inorder():
-    print(a_node)
+    print(a_node.get_element())

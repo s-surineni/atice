@@ -174,16 +174,16 @@ class LinkedBinaryTree(BinaryTree):
 
     def inorder(self):
         if not self.is_empty():
-            for p in self._subtree_inorder(self._root):
+            for p in self._subtree_inorder(self.get_root()):
                 yield p
 
     def _subtree_inorder(self, pos):
         if self.get_left_child(pos):  # is this check necessary?
-            for other in self._subtree_inorder(self.get_left_child(p)):
+            for other in self._subtree_inorder(self.get_left_child(pos)):
                 yield other
-        yield p
+        yield pos
         if self.get_right_child(pos):
-            for other in self._subtree_inorder(self.get_right_child(p)):
+            for other in self._subtree_inorder(self.get_right_child(pos)):
                 yield other
 
     # def get_root(self, e):
