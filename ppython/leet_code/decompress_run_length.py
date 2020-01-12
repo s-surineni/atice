@@ -10,3 +10,17 @@ while idx < num_len:
         op_list.append(val)
     idx += 2
 print(op_list)
+
+
+#########################
+class Solution(object):
+    def decompressRLElist(self, A):
+        N = len(A)
+        ans = []
+        for i in range(0, N, 2):
+            j = i + 1
+            count = A[i]
+            num = A[j]
+            if count:
+                ans.extend([num] * count)
+        return ans
