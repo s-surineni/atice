@@ -37,3 +37,21 @@ while curr_idx < num_eles:
 
 for a_node in tree.inorder():
     print(a_node.get_element())
+
+curr_level = [tree.get_root()]
+prev_level = []
+next_level = []
+while curr_level:
+    for a_node in curr_level:
+        if tree.get_left_child(a_node):
+            next_level.append(tree.get_left_child(a_node))
+        if tree.get_right_child(a_node):
+            next_level.append(tree.get_right_child(a_node))
+    prev_level = curr_level
+    curr_level = next_level
+    next_level = []
+leaf_sum = 0
+for a_node in prev_level:
+    leaf_sum += int(a_node.get_element())
+
+print(leaf_sum)
