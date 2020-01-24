@@ -24,24 +24,34 @@ def find_neighbors(grid, current_indices):
     return neighbours
 
 def find_unique_paths_dfs(grid, steps, current_indices, end_indices, unique_paths):
-    print('current_indices', current_indices)
+    # print('current_indices', current_indices)
+    cr, cc = current_indices[0], current_indices[1]
+    curr_val = grid[cr][cc]
+
+    if curr_val  == 0:
+        steps -= 1
+        grid[cr][cc] = -1
+    elif curr_val == 2 and steps == 0:
+        unique_paths += 1
+        return unique_paths
+    elif curr_val == -1:
+        return unique_paths
+    elif curr_val == 1:
+        grid[cr][cc] = -1
+    else:
+        return unique_paths
     for nr, nc in find_neighbors(grid, current_indices):
-        curr_val = grid[nr][nc]
-        if curr_val  == 0:
-            steps -= 1
-            grid[nr][nc] = -1
-        elif curr_val == 2 and steps == 0:
-            unique_paths += 1
-            return unique_paths
-        else:
-            return unique_paths
         unique_paths = find_unique_paths_dfs(grid, steps, (nr, nc), end_indices, unique_paths)
-    grid[nr][nc] = 0
+
+    grid[cr][cc] = 0
     return unique_paths
 
 def find_unique_paths(grid):
     steps, start_indices, end_indices = find_end_points_and_steps(grid)
+
     unique_paths = find_unique_paths_dfs(grid, steps, start_indices, end_indices, 0)
+    return unique_paths
+
 
 def parse_input():
     grid = []
