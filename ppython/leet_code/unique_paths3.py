@@ -1,3 +1,5 @@
+# The official solution is different than what I did check how it would affects the performance !!
+
 def find_end_points_and_steps(grid):
     steps = 0
     for ri in range(len(grid)):
