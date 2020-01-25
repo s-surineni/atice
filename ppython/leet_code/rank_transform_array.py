@@ -3,12 +3,10 @@ def parse_input():
     return nums
 
 def rank_transform(arr):
+    if not arr:
+        return 
     vals_dict = {}
-    for idx, val in enumerate(arr):
-        if vals_dict.get(val):
-            vals_dict[val].append(idx)
-        else:
-            vals_dict[val] = [idx]
+
 
     dup_arr = arr[:]
     dup_arr.sort()
@@ -16,14 +14,14 @@ def rank_transform(arr):
     curr_rank = 1
     prev_val = dup_arr[0]
     for val in dup_arr:
-        if prev_val != val:
-            curr_rank += 1
-        vals_dict[val].append(curr_rank)
+        if  vals_dict.get(val):
+            continue
+        vals_dict[val] = curr_rank
+        curr_rank += 1
 
     for val in arr:
-        rank_arr.append(vals_dict[val][-1])
+        rank_arr.append(vals_dict[val])
     return rank_arr
-
 
 arr = parse_input()
 print(rank_transform(arr))
