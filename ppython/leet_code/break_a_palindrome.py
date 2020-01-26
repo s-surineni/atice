@@ -18,3 +18,10 @@ def break_palindrome(palindrome):
 
 palindrome = parse_input()
 print(break_palindrome(palindrome))
+
+
+def breakPalindrome(self, S):
+    for i in xrange(len(S) / 2):
+        if S[i] != 'a':
+            return S[:i] + 'a' + S[i + 1:]
+    return S[:-1] + 'b' if S[:-1] else ''
