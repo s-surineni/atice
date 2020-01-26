@@ -25,3 +25,10 @@ def rank_transform(arr):
 
 arr = parse_input()
 print(rank_transform(arr))
+
+
+def arrayRankTransform(self, A):
+    rank = {}
+    for a in sorted(A):
+        rank.setdefault(a, len(rank) + 1)
+    return [rank[a] for a in A]
