@@ -2,6 +2,7 @@ from functools import lru_cache
 from sys import setrecursionlimit as srl
 srl(10**6)
 
+
 class Solution(object):
     def minimumDistance(self, word):
         A = [list("ABCDEF"), list("GHIJKL"), list("MNOPQR"), list("STUVWX"), list("YZ    ")]
