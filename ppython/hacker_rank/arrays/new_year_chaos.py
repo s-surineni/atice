@@ -8,16 +8,22 @@ import sys
 
 # Complete the minimumBribes function below.
 def minimumBribes(q):
-    bribes = 0
-    for idx in range(len(q) - 1):
-        if q[idx] > q[idx + 1]:
-            if q[idx] - q[idx + 1] > 2:
+    q_len = len(q)
+    total_count = 0
+    for idx in range(q_len - 1, -1, -1):
+        # curr_count = 0
+        if idx + 1 != q[idx]:
+            turn = 1
+            while idx + 1 != q[idx]:
+                q[idx], q[idx - turn] = q[idx - turn], q[idx]
+                turn += 1
+            # Could have tested this inside while loop and would have saved
+            # some steps <!better>
+            if turn > 3:
                 print('Too chaotic')
-                break
-            bribes += q[idx] - (idx)
-    else:
-        print(bribes)
-
+                return
+            total_count += (turn - 1)
+    print(total_count)
 if __name__ == '__main__':
     t = int(input())
 
