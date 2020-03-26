@@ -27,4 +27,3 @@ class Solution:
 
 
 print(Solution().shortestToChar("loveleetcode", 'e'))
-
