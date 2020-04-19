@@ -7,4 +7,3 @@ def inorder(root, new_node):
     new_node = new_node.right
     new_node = inorder(root.right, new_node)
     return new_node
-
