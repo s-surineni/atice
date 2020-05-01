@@ -1,6 +1,6 @@
 # Instead of 4 different while loops this worked on a single while loop
 # this is better code <!note> <!better>
-def numRookCaptures(self, board):  # 
+def numRookCaptures(self, board):  #
     for i in range(8):
         for j in range(8):
             if board[i][j] == 'R':
@@ -24,7 +24,7 @@ def find_captures(board, ri, ci):
         if board[ri][cip] == 'p':
             pawn_count += 1
             break
-        # instead of chacking for B, C, it was enough to see not presence of empty space <!note> <!better?
+        # instead of chacking for B, C, it was enough to see not presence of empty space <!note> <!better>
         if board[ri][cip] != '.':
             break
         cip -= 1
@@ -52,7 +52,7 @@ def find_captures(board, ri, ci):
             break
         if board[rip][ci] != '.':
             break
-        rip += 1   
+        rip += 1
     return pawn_count
 
 

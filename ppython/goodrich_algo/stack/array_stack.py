@@ -42,25 +42,26 @@ def pusher():
     stack.push(ele)
 
 
-menu = {
-    'e': stack.is_empty,
-    's': stack.size,
-    't': stack.top_ele,
-    'p': stack.pop,
-    'pu': pusher,
-    'o': stack.output
-}
+if __name__ == '__main__':
+    menu = {
+        'e': stack.is_empty,
+        's': stack.size,
+        't': stack.top_ele,
+        'p': stack.pop,
+        'pu': pusher,
+        'o': stack.output
+    }
 
 
-while(True):
-    print('e: stack.is_empty,')
-    print('s: stack.size,')
-    print('t: stack.top_ele,')
-    print('p: stack.pop,')
-    print('pu: stack.push,')
-    print('o: stack.output')
+    while(True):
+        print('e: stack.is_empty,')
+        print('s: stack.size,')
+        print('t: stack.top_ele,')
+        print('p: stack.pop,')
+        print('pu: stack.push,')
+        print('o: stack.output')
 
-    choice = input('please choose one of the above choice: ')
-    if choice == 'x':
-        break
-    menu[choice]()
+        choice = input('please choose one of the above choice: ')
+        if choice == 'x':
+            break
+        menu[choice]()
