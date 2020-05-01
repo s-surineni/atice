@@ -13,3 +13,4 @@ str1 = "y#fo##f"
 str2 = "y#f#o##f"
 print(backspace_string_compare(str1))
 print(backspace_string_compare(str2))
+g

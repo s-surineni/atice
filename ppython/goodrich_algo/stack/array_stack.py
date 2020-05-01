@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 class ArrayStack:
 
     def __init__(self):
@@ -34,12 +32,15 @@ class ArrayStack:
     def output(self):
         print(self.stack)
 
+
 stack = ArrayStack()
+
 
 def pusher():
     ele = int(input('enter element to push: '))
     print()
     stack.push(ele)
+
 
 menu = {
     'e': stack.is_empty,
