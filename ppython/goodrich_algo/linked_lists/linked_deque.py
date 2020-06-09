@@ -1,4 +1,4 @@
-import _DoublyLinkedBase from doublylinkedbase
+from _DoublyLinkedBase import doublylinkedbase
 
 
 class LinkedDeque(_DoublyLinkedBase):

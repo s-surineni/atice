@@ -1,5 +1,9 @@
+from exceptions import Empty
+
+
 class LinkedQueue:
     class _Node:
+        __slots__ = '_ele', '_nxt'
         def __init__(self, ele, nxt=None):
             self._ele = ele
             self._nxt = nxt
