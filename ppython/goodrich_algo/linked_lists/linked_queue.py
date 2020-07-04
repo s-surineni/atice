@@ -1,9 +1,18 @@
+'''
+run this from
+goodrich_algo
+with command
+python -m linked_lists.linked_stack
+'''
+
+
 from exceptions import Empty
 
 
 class LinkedQueue:
     class _Node:
         __slots__ = '_ele', '_nxt'
+
         def __init__(self, ele, nxt=None):
             self._ele = ele
             self._nxt = nxt
@@ -26,7 +35,7 @@ class LinkedQueue:
 
     def dequeue(self):
         if self.is_empty():
-            raise ValueError('Queue is empty')
+            raise Empty('Queue is empty')
         removed = self._head._ele
         self._head = self._head._nxt
         self._size -= 1
@@ -39,3 +48,13 @@ class LinkedQueue:
         if self.is_empty():
             raise Empty('Queue is empty')
         return self._head._ele
+
+
+if __name__ == '__main__':
+    lq = LinkedQueue()
+    lq.enqueue(5)
+    lq.enqueue(6)
+    lq.enqueue(7)
+    lq.enqueue(8)
+    print(lq.dequeue())
+    print(lq.dequeue())
