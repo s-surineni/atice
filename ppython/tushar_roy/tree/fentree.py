@@ -47,3 +47,4 @@ if (__name__ == '__main__'):
 
     # print (ft.range_sum (1, 5))  #returns 2-1+6+5+4
     # print (ft.prefix_sum (5))    #returns 3+2-1+6+5+4
+    print('range (2, 5)', ft.range_sum(2, 5))
