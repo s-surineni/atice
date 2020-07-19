@@ -12,7 +12,7 @@ class FenwickTree:
         return idx - (-idx & idx)
 
     def get_next(self, idx):
-        return idx + (idx & - idx)
+        return idx + (idx & -idx)
 
     def find_sum(self, hi):
         hi += 1

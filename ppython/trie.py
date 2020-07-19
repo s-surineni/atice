@@ -27,7 +27,7 @@ class Trie:
         return ord(ch) - ord('a')
 
     def _index_to_char(self, idx):
-        return chr(idx + ord('a')) 
+        return chr(idx + ord('a'))
 
     def insert(self, key):
         p_crawl = self.root
@@ -75,11 +75,10 @@ class Trie:
                 return p_node.find_if_free_node()
             else:
                 index = self._char_to_index(key[level])
-                if self._delete_helper(p_node.children[index],
-                                       key, level + 1):
+                if self._delete_helper(p_node.children[index], key, level + 1):
                     p_node.children[index] = None
-                    return (not p_node.find_if_leaf_node() and
-                            p_node.find_if_free_node())
+                    return (not p_node.find_if_leaf_node()
+                            and p_node.find_if_free_node())
         return False
 
     def delete_key(self, key):
@@ -91,7 +90,6 @@ class Trie:
         if key_length > 0:
             self._delete_helper(self.root, key, 0)
 
-
     def pre_order_util(self, c_node, c_str, max_vals):
         if c_node.find_if_leaf_node():
             if max_vals[0] > c_node.find_if_free_node():
@@ -100,14 +98,11 @@ class Trie:
 
         for idx in range(len(c_node.children)):
             if c_node.children[idx]:
-                self.pre_order_util(c_node.children[idx], c_str + self._index_to_char(idx),
-                                    max_vals)
-            
+                self.pre_order_util(c_node.children[idx],
+                                    c_str + self._index_to_char(idx), max_vals)
+
     def pre_order(self):
         c_node = self.root
         max_vals = [0, '']
         self.pre_order_util(c_node, '', max_vals)
         print(max_vals)
-
-
-
