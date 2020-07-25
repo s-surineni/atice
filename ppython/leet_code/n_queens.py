@@ -8,7 +8,8 @@ def find_n_queens_positions_recur(q_count, curr_row, q_positions):
         found_safe = True
 
         for a_row in range(curr_row):
-            # this is special too
+            # this is special too because for a column we MUST
+            # check it is safe with all the rows
             if (q_positions[a_row][1] == col
                 or q_positions[a_row][0] - q_positions[a_row][1] == curr_row - col
                 or q_positions[a_row][0] + q_positions[a_row][1] == curr_row + col):
@@ -30,4 +31,4 @@ def find_n_queens_positions(q_count):
 
 
 if __name__ == '__main__':
-    print(find_n_queens_positions(4))
+    print(find_n_queens_positions(3))
