@@ -28,6 +28,27 @@ class LinkedList:
                 return True
         return False
 
+    def find_remove_loop(self):
+        slow_p = self._head
+        fast_p = slow_p
+
+        while slow_p and fast_p and fast_p._nxt:
+            slow_p = slow_p._nxt
+            fast_p = fast_p._nxt._nxt
+            if slow_p == fast_p:
+                break
+        else:
+            return False
+        slow_p = self._head
+        # <!note> <!better> by comparing next pointers we need not find out
+        # last pointer separately
+        while slow_p._nxt != fast_p._nxt:
+            slow_p = slow_p._nxt
+            fast_p = fast_p._nxt
+
+        fast_p._nxt = None
+        return True
+
     def __str__(self):
         ll_str = []
         po = ll._head
@@ -50,5 +71,7 @@ if __name__ == '__main__':
     ll.add_node(9)
     print(ll)
     ll._head._nxt._nxt._nxt._nxt._nxt._nxt = ll._head._nxt._nxt
-    print(ll.find_loop())
-
+    # print(ll)
+    # print(ll.find_loop())
+    print(ll.find_remove_loop())
+    print(ll)
