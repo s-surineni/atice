@@ -1,0 +1,1 @@
+* How would you handle a race around condition while updating a record in your datatbase
