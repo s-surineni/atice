@@ -1,4 +1,5 @@
-from _DoublyLinkedBase import doublylinkedbase
+from doublylinkedbase import _DoublyLinkedBase
+from ppython.goodrich_algo.exceptions import Empty
 
 
 class LinkedDeque(_DoublyLinkedBase):

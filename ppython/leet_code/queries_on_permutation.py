@@ -18,26 +18,27 @@ class Fenwick:
             self.data[i] += x
             i += i & -i
 
+
 class Solution2(object):
     def processQueries(self, queries, n):
         fenw = Fenwick(2 * n)
         vimap = {}
-        for i in range(1, n + 1):
-            fenw.add(i + n, 1)
-            vimap[i] = i + n
+        for idx in range(1, n + 1):
+            fenw.add(idx + n, 1)
+            vimap[idx] = idx + n
         cur = n
-        
+
         ans = []
-        for q in queries:
-            i = vimap.pop(q)
-            rank = fenw.sum(i-1)
+        for qu in queries:
+            idx = vimap.pop(qu)
+            rank = fenw.sum(idx - 1)
             ans.append(rank)
-            
-            vimap[q] = cur
-            fenw.add(i, -1)
+
+            vimap[qu] = cur
+            fenw.add(idx, -1)
             fenw.add(cur, 1)
             cur -= 1
         return ans
 
 
-print(Solution2().processQueries([3,1,2,1],  5))
+print(Solution2().processQueries([3, 1, 2, 1], 5))

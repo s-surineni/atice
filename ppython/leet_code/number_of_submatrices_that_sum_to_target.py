@@ -11,10 +11,13 @@ def number_of_submatrices_that_sum_to_target(mat, target):
 
     for idx, curr_row in enumerate(mat):
         for idy, val in enumerate(curr_row):
-            prefix_sum_arr[idx + 1].append(prefix_sum_arr[idx][idy] + mat[idx][idy])
+            prefix_sum_arr[idx + 1].append(prefix_sum_arr[idx][idy] +
+                                           mat[idx][idy])
 
     print('*' * 80)
     print('iron man prefix_sum_arr', prefix_sum_arr)
-mat = [[0,1,0],[1,1,1],[0,1,0]]
+
+
+mat = [[0, 1, 0], [1, 1, 1], [0, 1, 0]]
 target = 0
 print(number_of_submatrices_that_sum_to_target(mat, target))
