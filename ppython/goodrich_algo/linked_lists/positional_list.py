@@ -1,3 +1,4 @@
+# python -m goodrich_algo.linked_lists.positional_list_insertion_sort
 from .doublylinkedbase import _DoublyLinkedBase
 
 
@@ -79,6 +80,14 @@ class PositionalList(_DoublyLinkedBase):
         old_value = node._element
         node._element = e
         return old_value
+
+    def __str__(self):
+        res = ''
+        curr = self.get_first()
+        while curr.get_element():
+            res += ' '  + str(curr.get_element())
+            curr = self.get_after_node(curr)
+
 
 
 if __name__ == '__main__':
