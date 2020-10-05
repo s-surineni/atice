@@ -1,10 +1,16 @@
-from positional_list import PositionalList
+from .positional_list import PositionalList
 
 
 class FavoritesList:
 
     def __init__(self):
         self._data = PositionalList()
+
+    def __str__(self):
+        resp = ''
+        for el in self._data:
+            resp = resp + ' value: {} count: {},'.format(el._value, el._count)
+        return resp
 
     class _Item:
         def __init__(self, e):
@@ -13,7 +19,7 @@ class FavoritesList:
 
     def _find_position(self, e):
         walk = self._data.get_first()
-        while walk is not None and walk.get_element() != e:
+        while walk is not None and walk.get_element()._value != e:
             walk = self._data.get_after_node(walk)
         return walk
 
@@ -21,10 +27,10 @@ class FavoritesList:
         if p == self._data.get_first():
             return
         count = p.get_element()._count
-        new_p = self._data.get_before_node(p)
-        while new_p != self._data.get_first() and count < new_p.get_element()._count:
-            new_p = self._data.get_before_node(new_p)
-        self._data.add_before(new_p, self._data.delete(p))
+        curr_p = self._data.get_before_node(p)
+        while curr_p != self._data.get_first() and count > curr_p.get_element()._count:
+            curr_p = self._data.get_before_node(curr_p)
+        self._data.add_before(curr_p, self._data.delete(p))
 
     def __len__(self):
         return len(self._data)
@@ -59,8 +65,15 @@ class FavoritesList:
 if __name__ == '__main__':
     f = FavoritesList()
     f.access('i')
+    f.access('i')
     f.access('l')
     f.access('o')
+    f.access('i')
+    f.access('o')
+    f.access('o')
+    f.access('o')
+
+    print(f)
 
     for e in f.top(3):
         print(e)
