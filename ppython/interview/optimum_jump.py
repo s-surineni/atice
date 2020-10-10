@@ -24,11 +24,12 @@ def optimum_jump_backtrack(arr, curr_pos, cost, path_cost, path, res):
     return res
 
 
-
-nums = [1, 2, 3, 4, 100]
+# nums = [1, 2, 3, 4, 100]
 # nums = [1, 2, 3]
 # nums = [1]
 # nums = [1, 2]
+# nums = [1, 2, 3, 100, 200]
+nums = [1, 2, 3, 100, 4]
 
 
 def optimum_jump(nums):
