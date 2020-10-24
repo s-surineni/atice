@@ -1,5 +1,7 @@
-from positional_list import PositionalList
-from favorites_list import FavoritesList
+# python -m goodrich_algo.linked_lists.favorites_list_mtf
+
+from .positional_list import PositionalList
+from .favorites_list import FavoritesList
 
 
 class FavoritesListMTF(FavoritesList):
