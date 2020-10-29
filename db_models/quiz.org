@@ -1,0 +1,33 @@
+* User
+** user_id
+** username
+* Quiz
+** quiz_id
+** heading
+* Question
+** question_id
+** quiz_id -> fk
+** question_text
+* Answer
+** answer_id
+** question_id -> fk
+** correct
+** answer_text
+* UserQuiz
+** Gets created when users starts taking quiz
+** quiz_id
+** user_id
+** score -> computer value?
+*** when will this be updated?
+**** after a submit button is press
+**** after clicking on each choice
+** user_quiz_id -> pk
+*** can we use this to as foreign key somewhere else?
+** there will be quiz_id and user_id repetition. will this not be considered duplicates?
+* UserQuizQuestion
+** user_id
+** quiz_id
+** question_id
+** answer_id
+** correct
+*** isn't this a duplicate as we used it already in answer
