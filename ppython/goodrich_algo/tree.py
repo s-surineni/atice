@@ -1,3 +1,4 @@
+# can do most of the methods iteratively with while loop
 class Tree:
     '''Abstract base class representing a tree structure.'''
     class Position:
@@ -55,7 +56,7 @@ class Tree:
         return max(self.depth(p) for p in self.positions() if self.is_leaf(p))
     # shouldn't children be the method of node?
     def _height2(self, p):
-        if self.root(p):        
+        if self.root(p):
             return 0
         else:
             return max(1 + (self._height2(c) for c in self.children(p)))  # why not p.children ?
