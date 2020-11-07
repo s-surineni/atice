@@ -1,0 +1,42 @@
+* User
+** user_id
+** name
+* Complex
+** complex_id
+** complex_name
+* Movie
+** movie_id
+** movie_name
+* Theatre
+** theatre_id
+** movie_id
+** theatre_name
+** complex_id
+* Showing
+** showing_id
+** movie_id
+** theatre_id
+** time
+** date
+*** There will be different record for one time and one date
+* Booking
+** booking_id
+** showing_id
+** user_id
+** seat_id
+* Booking_Seats
+** booking_id
+** seat_id
+* Seat
+** seat_id
+** seat_number
+** theatre_id
+* Possible queries
+** get all showings of movie
+#+begin_src sql
+select movie_name, complex_name, theatre_name, time
+from movie inner join showing inner join theatre inner join complex
+#+end_src
+** get all showings in complex
+** get all showings in theatre
+** How do we find out that seats are reserved
