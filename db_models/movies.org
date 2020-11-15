@@ -10,6 +10,7 @@
 * Theatre
 ** theatre_id
 ** movie_id
+*** This is not necessary here
 ** theatre_name
 ** complex_id
 * Showing
@@ -24,6 +25,7 @@
 ** showing_id
 ** user_id
 ** seat_id
+*** multivalued attribute
 * Booking_Seats
 ** booking_id
 ** seat_id
@@ -31,6 +33,8 @@
 ** seat_id
 ** seat_number
 ** theatre_id
+* InProcess seats
+** seat_id
 * Possible queries
 ** get all showings of movie
 #+begin_src sql
@@ -40,3 +44,4 @@ from movie inner join showing inner join theatre inner join complex
 ** get all showings in complex
 ** get all showings in theatre
 ** How do we find out that seats are reserved
+** how do you block seats for 10 min
