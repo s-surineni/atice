@@ -1,0 +1,26 @@
+* User
+** user_id
+** name
+** followers
+* Post
+** post_id
+** media_url
+** time_posted
+** tags - multivalued attribute
+* Comment
+** comment_id
+** post_id
+** user_id
+*** can comment be part of post?
+*** can likes be part of post?
+* Notifications
+** notif_id
+** read
+** user_id
+* Tags
+** tag_id
+** tag_name
+* Likes
+** like_id
+** user_id
+** post_id
