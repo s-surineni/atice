@@ -1,0 +1,13 @@
+* users
+** position
+** id
+** snake
+*** start point and end
+** ladder
+*** start and end
+** dictionary
+*** {start: end}
+** Dice
+*** Random number 1 to 6
+** Turn
+*** User_id, position, dest pos
