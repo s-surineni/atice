@@ -137,9 +137,10 @@ class LinkedBinaryTree(BinaryTree):
             t2._size = 0
 
     def preorder(self):
-        if not self.is_empty():
-            for p in self._subtree_preorder(self._root):
-                yield p
+        # if not self.is_empty():
+        #     for p in self._subtree_preorder(self._root):
+        #         yield p
+        return self._subtree_preorder(self._root)
 
     def _subtree_preorder(self, p):
         yield p
@@ -148,8 +149,8 @@ class LinkedBinaryTree(BinaryTree):
                 yield other
 
     def positions(self):
-        # return self.preorder()
-        pass
+        return self.preorder()
+        # pass
 
     def postorder(self):
         if not self.is_empty():
@@ -198,3 +199,8 @@ class LinkedBinaryTree(BinaryTree):
         if node._right_child:
             count += 1
         return count
+
+
+if __name__ == '__main__':
+    # tr = Tree()
+    pass
