@@ -1,0 +1,31 @@
+* student
+** student_id
+** name
+** department
+** year
+*** how and when to update this?
+**** Run a cron to update at the beginning of semester
+* Book
+** book_id
+** name
+** author
+** subject
+** price
+** copies
+* student_book
+** student_book_id
+*** necessary as student can take a book multiple times
+** student_id
+** book_id
+** issued_date
+** over_due
+*** will be either true or false
+** employee_id
+* Employee
+** employee_id
+** employee_name
+* Constrains
+** Book can't be extended more than once
+** multiple duration for overdue multiple people
+** multiple copies of book cannot be issued at a time
+** can't have more than 3 books at a time

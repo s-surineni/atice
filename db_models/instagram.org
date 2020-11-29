@@ -7,10 +7,12 @@
 ** media_url
 ** time_posted
 ** tags - multivalued attribute
+** user_id
 * Comment
 ** comment_id
 ** post_id
 ** user_id
+** comment_text
 *** can comment be part of post?
 *** can likes be part of post?
 * Notifications
@@ -24,3 +26,7 @@
 ** like_id
 ** user_id
 ** post_id
+* Operations
+** Get all people by name
+** trigger notification to followers
+** update user about like, comment
