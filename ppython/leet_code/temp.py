@@ -1,15 +1,28 @@
-def fun(s, z):
-    total = 0
-    len_str = len(s)
+# class A:
+#     def meth_a(self):
+#         pass
+#     def meth_c(self):
+#         pass
 
-    for x, y in z:
-        if x == 0:
-            total += y
-        else:
-            total -= y
-    total = total % len_str
-    return s[total:] + s[:total]
+# class B:
+#     def meth_b(self):
+#         pass
+#     def meth_c(self):
+#         pass
+
+# class C(A, B):
+import math
+vals = [9, 1, 2, 8, 3, 7]
+vals = [1, 2, 3, 9, 8, 7]
+
+def sort_half(vals):
+    vals.sort()
+    val_len = len(vals)
+    half_val = math.ceil(val_len / 2)
+    half = vals[:math.ceil(val_len / 2)]
+
+    vals[:half_val] = half[::-1]
+    return vals
 
 
-
-print(fun('cutshort', [[0, 3], [1, 11]]))
+print(sort_half(vals))

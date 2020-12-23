@@ -5,6 +5,8 @@
 ** year
 *** how and when to update this?
 **** Run a cron to update at the beginning of semester
+** student_mail
+** student_number
 * Book
 ** book_id
 ** name
@@ -21,6 +23,7 @@
 ** over_due
 *** will be either true or false
 ** employee_id
+** book_returned_day
 * Employee
 ** employee_id
 ** employee_name
@@ -29,3 +32,9 @@
 ** multiple duration for overdue multiple people
 ** multiple copies of book cannot be issued at a time
 ** can't have more than 3 books at a time
+* Author
+** author_id
+** author_name
+* Operatoins
+** search all books by author
+** search by book name

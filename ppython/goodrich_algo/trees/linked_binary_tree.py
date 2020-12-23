@@ -1,4 +1,5 @@
 from .abstract_binary_tree import BinaryTree
+from linked_lists.linked_queue import LinkedQueue
 
 
 class LinkedBinaryTree(BinaryTree):
@@ -203,4 +204,4 @@ class LinkedBinaryTree(BinaryTree):
 
 if __name__ == '__main__':
     # tr = Tree()
-    pass
+    tr = LinkedBinaryTree()
