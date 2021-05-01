@@ -5,7 +5,7 @@ from linked_lists.linked_queue import LinkedQueue
 class LinkedBinaryTree(BinaryTree):
     class _Node:
         __slots__ = '_element', '_parent', '_left_child', '_right_child'
-
+        # I think there should be get_element defined
         def __init__(self, element,
                      parent=None,
                      left_child=None,
@@ -201,6 +201,26 @@ class LinkedBinaryTree(BinaryTree):
             count += 1
         return count
 
+    # Test this code. It is different from the one in book
+    def parenthesize_recur(self, node, char_arr):
+        char_arr.append(str(node._element))
+        if not self.get_children(node):
+            return
+        char_arr.append('(')
+        for ch in self.get_children():
+            # here ch may be position instance, but that it ok
+            # change code while testing this
+            self.parenthesize_recur(ch)
+            char_arr.append(', ')
+        char_arr.append(')')
+
+
+    def parenthesize(self):
+        if not self._root:
+            return ''
+        char_arr = []
+        self.parenthesize_recur(self._root, char_arr)
+        return ''.join(char_arr)
 
 if __name__ == '__main__':
     # tr = Tree()

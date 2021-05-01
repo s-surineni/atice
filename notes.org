@@ -1,0 +1,5 @@
+* to find the total sign in list of arrays in the problem [[https://leetcode.com/problems/sign-of-the-product-of-an-array/discuss/1152555/Java-solution-0-ms-Seriously-why-we-need-2][leet sign of product array]] this is used instead of storing num of neg values
+#+begin_src python
+if n < 0:
+    n = -n
+#+end_src
