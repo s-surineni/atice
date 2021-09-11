@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/arithmetic-slices-ii-subsequence/
 def find_arithmetic_slices(nums):
+    # (Notice) here instead of using 2d array 2d dict is used to save space
+    # see and learn if all 2d array problems can be changed this way
     num_len = len(nums)
     ans = 0
     dp_cache = {}
