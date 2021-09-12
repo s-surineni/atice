@@ -3,3 +3,9 @@
 if n < 0:
     n = -n
 #+end_src
+* dynamic programming
+** it can also be thought of as a procedural way to build solutions to bigger problems from simpler problems
+*** for example coin change
+** we consider solutions to all possible combinations of problems this way
+*** example coin change problem
+**** even though we don't want number of ways to form smaller sums, we do it as it is part of larget sum
