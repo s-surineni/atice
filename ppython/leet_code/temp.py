@@ -1,28 +1,32 @@
-# class A:
-#     def meth_a(self):
-#         pass
-#     def meth_c(self):
-#         pass
-
-# class B:
-#     def meth_b(self):
-#         pass
-#     def meth_c(self):
-#         pass
-
-# class C(A, B):
-import math
-vals = [9, 1, 2, 8, 3, 7]
-vals = [1, 2, 3, 9, 8, 7]
-
-def sort_half(vals):
-    vals.sort()
-    val_len = len(vals)
-    half_val = math.ceil(val_len / 2)
-    half = vals[:math.ceil(val_len / 2)]
-
-    vals[:half_val] = half[::-1]
-    return vals
+def dfs(num, temp, cur, last, res):
+    if not num:
+        if cur == target:
+            res.append(temp)
+        return
+    for i in range(1, len(num) + 1):
+        val = num[:i]
+        if i == 1 or (i > 1 and num[0] != "0"):  # prevent "00*" as a number
+            dfs(num[i:], temp + "+" + val, cur + int(val), int(val), res)
+            dfs(num[i:], temp + "-" + val, cur - int(val), -int(val), res)
+            dfs(
+                num[i:],
+                temp + "*" + val,
+                cur - last + last * int(val),
+                last * int(val),
+                res,
+            )
 
 
-print(sort_half(vals))
+def addOperators(num, target):
+    res, target = [], target
+    for i in range(1, len(num) + 1):
+        if i == 1 or (i > 1 and num[0] != "0"):  # prevent "00*" as a number
+            dfs(
+                num[i:], num[:i], int(num[:i]), int(num[:i]), res
+            )  # this step put first number in the string
+    return res
+
+
+num = "0123"
+target = 6
+print(addOperators(num, target))

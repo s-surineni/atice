@@ -11,6 +11,7 @@ def find_path_sum_recur(root, target, cache, run_sum):
         res = cache[req_sum]
     if curr_sum == target:
         res += 1
+    # (Notice) there was an issue when this statement is added before calculating res
     cache[curr_sum] = cache.get(curr_sum, 0) + 1
 
     # print('res', res)
