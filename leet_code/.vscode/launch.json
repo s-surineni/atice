@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch DistToTypeWord",
+            "request": "launch",
+            "mainClass": "DistToTypeWord",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch HeightChecker",
+            "request": "launch",
+            "mainClass": "HeightChecker",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch LetterTilePossibilities",
+            "request": "launch",
+            "mainClass": "LetterTilePossibilities",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch SingleNumber",
+            "request": "launch",
+            "mainClass": "SingleNumber",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sum3",
+            "request": "launch",
+            "mainClass": "Sum3",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch TroopsEvacuation",
+            "request": "launch",
+            "mainClass": "TroopsEvacuation",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch ValidSudoku",
+            "request": "launch",
+            "mainClass": "ValidSudoku",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch WordLadder2",
+            "request": "launch",
+            "mainClass": "WordLadder2",
+            "projectName": "leet_code_ac463d39"
+        },
+        {
+            "type": "java",
+            "name": "Launch WordSearch2",
+            "request": "launch",
+            "mainClass": "WordSearch2",
+            "projectName": "leet_code_ac463d39"
+        }
+    ]
+}

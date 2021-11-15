@@ -16,3 +16,8 @@ if n < 0:
 *** we can find all ways of climbing by simple formula ways(curr + 1, target) + ways(curr + 2, target)
 * Easy to make recursive program with loop using stack
 ** see invert_binary_tree2
+* I liked the way I did number of changes between app and website
+** Became I used prev = None the first comparison gets the changes value to 1
+** initial I started changes=-1 but it is not correct
+** I was particularly facing issue with comparing last element of one with rest of the other array
+** it all solved because I used prev = None and changes = 0

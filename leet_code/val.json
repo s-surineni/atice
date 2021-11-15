@@ -1,0 +1,7 @@
+SCALE(
+    ABSOLUTE(
+        DIFF(
+            DOWNSAMPLE(
+                SUM(
+                    DIVIDE(
+                        SUM($start$:$end$:core.$dc$.$spod$.$pod$:allMQClients.brokerInactiveTimeMs{role=app}:sum:1d-sum),FILL(BEGINRANGE,ENDRANGE,#1d#,#0m#,#FILLER1#),#UNION#,#0#),DIVIDE(SUM(TIMERANGE:SCOPE:allMQClients.dequeueThreadDowntimeMs{role=app}:sum:UNIONDWNSAMPLER),SCALE(COUNT(TIMERANGE:SCOPE:MqDownTimeInactiveBrokerSweeperMsRacNode*:sum:UNIONDWNSAMPLER),#FILLER2#),#UNION#,#0#),DIVIDE(UNION(SUM(TIMERANGE:SCOPE:allMQClients.db*queueErrorCount{role=app}:sum:UNIONDWNSAMPLER),FILL(BEGINRANGE,ENDRANGE,#1d#,#0m#,#0#)),MIN(SUM(TIMERANGE:SCOPE:allMQClients.dbEnqueueCount{role=app}:sum:UNIONDWNSAMPLER),SUM(TIMERANGE:SCOPE:allMQClients.dbDequeueCount{role=app}:sum:UNIONDWNSAMPLER)),#UNION#,#0#)),DOWNSAMPLER),#1#)),#100#)
