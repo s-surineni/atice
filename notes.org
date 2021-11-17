@@ -11,6 +11,7 @@ if n < 0:
 **** even though we don't want number of ways to form smaller sums, we do it as it is part of larget sum
 ** a systematic way to visit all possible combinations so we don't miss out any
 ** a way to organize data of smaller problems so that we can access it easiy
+** we know the solutions to base case and composite cases are calculated from base case
 * one of a kind problems
 ** all ways of climbing stairs https://leetcode.com/problems/climbing-stairs
 *** we can find all ways of climbing by simple formula ways(curr + 1, target) + ways(curr + 2, target)
@@ -21,3 +22,4 @@ if n < 0:
 ** initial I started changes=-1 but it is not correct
 ** I was particularly facing issue with comparing last element of one with rest of the other array
 ** it all solved because I used prev = None and changes = 0
+* if the parts allowed are only down and right we need not worry about cycles
