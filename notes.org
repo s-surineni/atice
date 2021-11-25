@@ -23,3 +23,6 @@ if n < 0:
 ** I was particularly facing issue with comparing last element of one with rest of the other array
 ** it all solved because I used prev = None and changes = 0
 * if the parts allowed are only down and right we need not worry about cycles
+* different startegies
+** we can append another number at end to avoid special case checking
+*** like adding negative number for maximum contiguous array
