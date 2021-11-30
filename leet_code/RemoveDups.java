@@ -1,3 +1,5 @@
+import java.util.List;
+
 class Solution {
     public String removeDuplicates(String s) {
         int i = 0, n = s.length();
