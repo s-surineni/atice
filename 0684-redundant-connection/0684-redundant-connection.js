@@ -22,10 +22,10 @@ var findRedundantConnection = function(edges) {
     }
 
     for(const [node1, node2] of edges) {
-        if (isConnected(node1, node2)) {
+        if (isConnected(node1 - 1, node2 - 1)) {
             return [node1, node2];
         }
-        union(node1, node2);
+        union(node1 -1 , node2 - 1);
     }
     return [];
 
