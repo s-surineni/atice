@@ -17,4 +17,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0684-redundant-connection](https://github.com/s-surineni/atice/tree/master/0684-redundant-connection) |
+## Array
+|  |
+| ------- |
+| [3429-special-array-i](https://github.com/s-surineni/atice/tree/master/3429-special-array-i) |
 <!---LeetCode Topics End-->
