@@ -67,8 +67,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2448-count-number-of-bad-pairs](https://github.com/s-surineni/atice/tree/master/2448-count-number-of-bad-pairs) |
+| [2802-find-the-punishment-number-of-an-integer](https://github.com/s-surineni/atice/tree/master/2802-find-the-punishment-number-of-an-integer) |
 ## Stack
 |  |
 | ------- |
 | [3447-clear-digits](https://github.com/s-surineni/atice/tree/master/3447-clear-digits) |
+## Backtracking
+|  |
+| ------- |
+| [2802-find-the-punishment-number-of-an-integer](https://github.com/s-surineni/atice/tree/master/2802-find-the-punishment-number-of-an-integer) |
 <!---LeetCode Topics End-->
