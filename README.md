@@ -6,11 +6,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0684-redundant-connection](https://github.com/s-surineni/atice/tree/master/0684-redundant-connection) |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/s-surineni/atice/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
+| [2564-most-profitable-path-in-a-tree](https://github.com/s-surineni/atice/tree/master/2564-most-profitable-path-in-a-tree) |
 ## Breadth-First Search
 |  |
 | ------- |
 | [0684-redundant-connection](https://github.com/s-surineni/atice/tree/master/0684-redundant-connection) |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/s-surineni/atice/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
+| [2564-most-profitable-path-in-a-tree](https://github.com/s-surineni/atice/tree/master/2564-most-profitable-path-in-a-tree) |
 ## Union Find
 |  |
 | ------- |
@@ -19,6 +21,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0684-redundant-connection](https://github.com/s-surineni/atice/tree/master/0684-redundant-connection) |
+| [2564-most-profitable-path-in-a-tree](https://github.com/s-surineni/atice/tree/master/2564-most-profitable-path-in-a-tree) |
 ## Array
 |  |
 | ------- |
@@ -27,6 +30,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1927-maximum-ascending-subarray-sum](https://github.com/s-surineni/atice/tree/master/1927-maximum-ascending-subarray-sum) |
 | [2107-find-unique-binary-string](https://github.com/s-surineni/atice/tree/master/2107-find-unique-binary-string) |
 | [2448-count-number-of-bad-pairs](https://github.com/s-surineni/atice/tree/master/2448-count-number-of-bad-pairs) |
+| [2564-most-profitable-path-in-a-tree](https://github.com/s-surineni/atice/tree/master/2564-most-profitable-path-in-a-tree) |
 | [3372-longest-strictly-increasing-or-strictly-decreasing-subarray](https://github.com/s-surineni/atice/tree/master/3372-longest-strictly-increasing-or-strictly-decreasing-subarray) |
 | [3429-special-array-i](https://github.com/s-surineni/atice/tree/master/3429-special-array-i) |
 | [3434-find-the-number-of-distinct-colors-among-the-balls](https://github.com/s-surineni/atice/tree/master/3434-find-the-number-of-distinct-colors-among-the-balls) |
@@ -101,6 +105,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/s-surineni/atice/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
+| [2564-most-profitable-path-in-a-tree](https://github.com/s-surineni/atice/tree/master/2564-most-profitable-path-in-a-tree) |
 ## Binary Tree
 |  |
 | ------- |
