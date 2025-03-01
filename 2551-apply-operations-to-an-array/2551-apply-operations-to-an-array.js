@@ -5,14 +5,16 @@ var applyOperations = function(nums) {
             nums[i + 1] = 0;
         }
     }
-
-    res = new Array(nums.length).fill(0)
-    resIdx = 0
-    for (const val of nums) {
-        if (val !== 0) {
-            res[resIdx] = val;
-            resIdx ++;
+    let nonZeroIdx = 0;
+    for (let i = 0; i< nums.length; i++) {
+        if(nums[i] != 0) {
+            nums[nonZeroIdx] = nums[i];
+            nonZeroIdx ++;
         }
     }
-    return res
+    while (nonZeroIdx < nums.length) {
+        nums[nonZeroIdx] = 0;
+        nonZeroIdx ++;
+    }
+    return nums;
 };
