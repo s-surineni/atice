@@ -33,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1927-maximum-ascending-subarray-sum](https://github.com/s-surineni/atice/tree/master/1927-maximum-ascending-subarray-sum) |
 | [2107-find-unique-binary-string](https://github.com/s-surineni/atice/tree/master/2107-find-unique-binary-string) |
 | [2448-count-number-of-bad-pairs](https://github.com/s-surineni/atice/tree/master/2448-count-number-of-bad-pairs) |
+| [2551-apply-operations-to-an-array](https://github.com/s-surineni/atice/tree/master/2551-apply-operations-to-an-array) |
 | [2564-most-profitable-path-in-a-tree](https://github.com/s-surineni/atice/tree/master/2564-most-profitable-path-in-a-tree) |
 | [3372-longest-strictly-increasing-or-strictly-decreasing-subarray](https://github.com/s-surineni/atice/tree/master/3372-longest-strictly-increasing-or-strictly-decreasing-subarray) |
 | [3429-special-array-i](https://github.com/s-surineni/atice/tree/master/3429-special-array-i) |
@@ -68,6 +69,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Simulation
 |  |
 | ------- |
+| [2551-apply-operations-to-an-array](https://github.com/s-surineni/atice/tree/master/2551-apply-operations-to-an-array) |
 | [3434-find-the-number-of-distinct-colors-among-the-balls](https://github.com/s-surineni/atice/tree/master/3434-find-the-number-of-distinct-colors-among-the-balls) |
 | [3447-clear-digits](https://github.com/s-surineni/atice/tree/master/3447-clear-digits) |
 ## Design
@@ -125,4 +127,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1631-number-of-sub-arrays-with-odd-sum](https://github.com/s-surineni/atice/tree/master/1631-number-of-sub-arrays-with-odd-sum) |
+## Two Pointers
+|  |
+| ------- |
+| [2551-apply-operations-to-an-array](https://github.com/s-surineni/atice/tree/master/2551-apply-operations-to-an-array) |
 <!---LeetCode Topics End-->
