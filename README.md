@@ -26,6 +26,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/s-surineni/atice/tree/master/0905-length-of-longest-fibonacci-subsequence) |
+| [1335-maximum-candies-allocated-to-k-children](https://github.com/s-surineni/atice/tree/master/1335-maximum-candies-allocated-to-k-children) |
 | [1364-tuple-with-same-product](https://github.com/s-surineni/atice/tree/master/1364-tuple-with-same-product) |
 | [1631-number-of-sub-arrays-with-odd-sum](https://github.com/s-surineni/atice/tree/master/1631-number-of-sub-arrays-with-odd-sum) |
 | [1849-maximum-absolute-sum-of-any-subarray](https://github.com/s-surineni/atice/tree/master/1849-maximum-absolute-sum-of-any-subarray) |
@@ -168,6 +169,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [1335-maximum-candies-allocated-to-k-children](https://github.com/s-surineni/atice/tree/master/1335-maximum-candies-allocated-to-k-children) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/s-surineni/atice/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
 | [3643-zero-array-transformation-ii](https://github.com/s-surineni/atice/tree/master/3643-zero-array-transformation-ii) |
 <!---LeetCode Topics End-->
