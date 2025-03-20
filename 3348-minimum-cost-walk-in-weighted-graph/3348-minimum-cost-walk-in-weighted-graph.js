@@ -43,13 +43,16 @@ var minimumCost = function(n, edges, query) {
     for (const edge of edges) {
         const root1 = unionFind.find(edge[1])
         const root2 = unionFind.find(edge[0])
-        
-        const union = unionFind.union(edge[0], edge[1]);
-        const root = unionFind.find(edge[0]);
-        if (union) {
+        let root;
+        if (root1 !== root2) {
+            unionFind.union(edge[0], edge[1]);
+            root = unionFind.find(edge[0]);
             minPathCost[root] &= minPathCost[root1] & minPathCost[root2];
+            minPathCost[root] &= edge[2];
+
+        } else {
+            minPathCost[root1] &= edge[2];
         }
-        minPathCost[root] &= edge[2];
     }
     const answer = [];
     for (const q of query) {
@@ -61,3 +64,4 @@ var minimumCost = function(n, edges, query) {
     }
     return answer;
 };
+
