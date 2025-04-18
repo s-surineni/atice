@@ -88,6 +88,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String
 |  |
 | ------- |
+| [0038-count-and-say](https://github.com/s-surineni/atice/tree/master/0038-count-and-say) |
 | [1160-letter-tile-possibilities](https://github.com/s-surineni/atice/tree/master/1160-letter-tile-possibilities) |
 | [1460-number-of-substrings-containing-all-three-characters](https://github.com/s-surineni/atice/tree/master/1460-number-of-substrings-containing-all-three-characters) |
 | [1516-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n](https://github.com/s-surineni/atice/tree/master/1516-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n) |
