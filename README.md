@@ -135,6 +135,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Math
 |  |
 | ------- |
+| [0069-sqrtx](https://github.com/s-surineni/atice/tree/master/0069-sqrtx) |
 | [1421-find-numbers-with-even-number-of-digits](https://github.com/s-surineni/atice/tree/master/1421-find-numbers-with-even-number-of-digits) |
 | [1500-count-largest-group](https://github.com/s-surineni/atice/tree/master/1500-count-largest-group) |
 | [1631-number-of-sub-arrays-with-odd-sum](https://github.com/s-surineni/atice/tree/master/1631-number-of-sub-arrays-with-odd-sum) |
@@ -212,6 +213,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0069-sqrtx](https://github.com/s-surineni/atice/tree/master/0069-sqrtx) |
 | [1335-maximum-candies-allocated-to-k-children](https://github.com/s-surineni/atice/tree/master/1335-maximum-candies-allocated-to-k-children) |
 | [2394-count-subarrays-with-score-less-than-k](https://github.com/s-surineni/atice/tree/master/2394-count-subarrays-with-score-less-than-k) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/s-surineni/atice/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
